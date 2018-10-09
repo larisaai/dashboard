@@ -17,17 +17,16 @@ function init() {
   setInterval(update, 1500);
 }
 //FUNCTION UPDATE, updates what was created in the previous function
+let data = JSON.parse(FooBar.getData());
 function update() {
-  let data = JSON.parse(FooBar.getData());
-
-  handleBartenders(data.bartenders);
-  beers(data.beertypes);
-  taps(data.taps);
+  handleBartenders(FooBarData.bartenders);
+  beers(FooBarData.beertypes);
+  taps(FooBarData.taps);
 }
 
 //FUNCTION HANDLEBARTENDERS
 function handleBartenders(bartenders) {
-  console.log(FooBarData.bartenders.name);
+  //console.log(FooBarData.bartenders.name);
   //console.log(bartenders[1]);
   //find bartenders names
   //display bartenders names
@@ -55,9 +54,29 @@ function displayNumber() {
   // start animation "number comming out of machine"
   // get data from the function getNumber and display on the ticket
 }
-
+getNumber();
 // FUNCTION GETNUMBER
 function getNumber() {
   // generete a consecutively number that will a one everytime numberbutton is pushed
-  // calculate what number in line the customer is
+  let startNumber = 1;
+
+  // calculate what number in line the customer is (length +1)
+  console.log(`You are number ${FooBarData.queue.length + 1} in line`);
+  let queueNr = FooBarData.queue.length + 1;
+  // find template and destination
+  let temp = document.querySelector("[data-number-template]");
+  let dest = document.querySelector("[data-number-destination]");
+  // set destination to innerHTML
+  dest.innerHTML = "";
+
+  // ?? do I need to clone??
+  let clone = temp.cloneNode(true).content;
+  document.querySelector("[data-number]").textContent = queueNr;
+  document.querySelector("[data-number-template]").appendChild(clone);
+  console.log(queueNr);
+
+  // HTML
+  //<div data-number-destination></div>
+  //<div data-number-template>
+  //    <p> </p>
 }
