@@ -19,6 +19,7 @@ function init() {
 //FUNCTION UPDATE, updates what was created in the previous function
 let data = JSON.parse(FooBar.getData());
 function update() {
+  data = JSON.parse(FooBar.getData());
   handleBartenders(FooBarData.bartenders);
   beers(FooBarData.beertypes);
   taps(FooBarData.taps);
@@ -54,29 +55,33 @@ function displayNumber() {
   // start animation "number comming out of machine"
   // get data from the function getNumber and display on the ticket
 }
-getNumber();
+getNumberMachine();
+
+// FUNCTION GETNUMBERMACHINE
+async function getNumberMachine() {
+  //load svg
+  let numberSvg = await fetch("svg/numbermachine.svg");
+  // interpretate svg as text
+  let svg = await numberSvg.text();
+  // put svg in html
+  document.querySelector("#getNumber").innerHTML = svg;
+  document.querySelector("#button").addEventListener("click", hideText);
+}
+// FUNCTION HIDETEXT
+// hide the text on the numbermachine
+function hideText() {
+  let text = document.querySelector("#getNumber #order_text");
+  text.style.visibility = "hidden";
+  getNumber();
+}
+
 // FUNCTION GETNUMBER
+// prints your number on the screen and counts down every time a customer is served
 function getNumber() {
-  // generete a consecutively number that will a one everytime numberbutton is pushed
-  let startNumber = 1;
-
   // calculate what number in line the customer is (length +1)
-  console.log(`You are number ${FooBarData.queue.length + 1} in line`);
   let queueNr = FooBarData.queue.length + 1;
-  // find template and destination
-  let temp = document.querySelector("[data-number-template]");
-  let dest = document.querySelector("[data-number-destination]");
-  // set destination to innerHTML
-  dest.innerHTML = "";
+  console.log(`You are number ${queueNr} in line`);
 
-  // ?? do I need to clone??
-  let clone = temp.cloneNode(true).content;
-  document.querySelector("[data-number]").textContent = queueNr;
-  document.querySelector("[data-number-template]").appendChild(clone);
-  console.log(queueNr);
-
-  // HTML
-  //<div data-number-destination></div>
-  //<div data-number-template>
-  //    <p> </p>
+  document.getElementById("your_number").textContent =
+    "You are number " + queueNr + " in line";
 }
