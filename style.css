@@ -1,7 +1,6 @@
 body {
   margin: 0px;
-  background-color: #B1AEAD;
-
+  background-color: #b1aead;
 }
 
 /* mobile version */
@@ -10,38 +9,97 @@ body {
 #wall {
   width: 100vw;
   height: 44vh;
-  background-color: #B1AEAD;
-  position: relative;
+  background-color: #b1aead;
 }
 
 #logo {
-
   margin: 20px;
   width: 90px;
   height: 90px;
   display: block;
   margin: auto;
   border: 1px solid black;
-
 }
 
-.screen {
+/*.screen {
   width: 220px;
   height: 150px;
-  border: 3px solid black;
+  background: #5b5a58;
+  border: 8px solid black;
   display: block;
   margin: auto;
-  margin-top: 20px;
+  width: 100%;
+  overflow-x: scroll;
+  white-space: nowrap;
+  position: relative;
+}*/
 
+/* screen style*/
+
+.screen {
+  width: 300px;
+  height: 200px;
+  border: 8px solid black;
+  display: block;
+  margin: auto;
+  width: 100%;
+  overflow-x: scroll;
+  white-space: nowrap;
+  position: relative;
+}
+.screen:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* .screen-wrap {
+  display: grid;
+  grid-template-columns: 50% 50%;
+} */
+
+.screen h1 {
+  text-align: left;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 20px;
+}
+.columns {
+  width: 100%;
+  display: inline-block;
+}
+
+.object {
+  width: 100%;
+  display: block;
+  float: none;
+  clear: left;
+}
+
+#beer-img {
+  width: 30px;
+  height: 30px;
+  float: left;
+  background: blue;
+  margin-bottom: 0px;
+  margin-left: 10px;
+}
+#beer-name {
+  float: left;
+  padding-left: 20px;
+  margin-bottom: 1px;
+}
+#beer-price {
+  float: right;
+  padding-right: 30px;
+  margin-bottom: 1px;
 }
 
 /* beer style */
 #beer {
   position: relative;
-  background-color: #D5CDB4;
+  background-color: #d5cdb4;
   width: 100vw;
   height: 36vh;
-
 }
 
 .under {
@@ -50,15 +108,14 @@ body {
 }
 
 .underkage {
-  background-color: #5B5A59;
+  background-color: #5b5a59;
   height: 15px;
 }
 
 .underbeer {
-
   width: 100vw;
   height: 3vh;
-  background-image: linear-gradient(#5B5A59, #808080);
+  background-image: linear-gradient(#5b5a59, #808080);
   opacity: 0.9;
 }
 
@@ -76,7 +133,6 @@ body {
   height: 15vh;
   background-image: linear-gradient(black, #808080);
   opacity: 0.4;
-
 }
 
 .chair1,
@@ -94,7 +150,6 @@ body {
 }
 
 @media screen and (min-width: 500px) {
-
   /* wall style */
   #wall {
     height: 42vh;
@@ -107,27 +162,15 @@ body {
   }
 
   #logo {
-
     width: 100px;
     height: 100px;
     margin: auto;
-
-  }
-
-  .screen {
-    width: 300px;
-    height: 200px;
-    border: 3px solid black;
-    display: block;
-    margin: auto;
-
   }
 
   /* beer style */
   #beer {
     height: 38vh;
   }
-
 
   .underbeer {
     height: 5vh;
@@ -143,13 +186,9 @@ body {
   .chair2 {
     margin-left: 160px;
   }
-
-
-
 }
 
 @media screen and (min-width: 800px) {
-
   /* wall style */
   #logo {
     width: 150px;
@@ -159,10 +198,11 @@ body {
   .screen {
     width: 450px;
     height: 200px;
-    border: 3px solid black;
+    border: 8px solid black;
     display: block;
     margin: auto;
-
+    overflow: auto;
+    white-space: nowrap;
   }
 
   /* table style */
@@ -184,7 +224,6 @@ body {
 
 /* tablet version */
 @media screen and (min-width: 1024px) {
-
   /* wall style */
 
   #wall {
@@ -204,10 +243,11 @@ body {
   .screen {
     width: 500px;
     height: 200px;
-    border: 3px solid black;
+    border: 8px solid black;
     display: block;
     margin: auto;
-
+    overflow: auto;
+    white-space: nowrap;
   }
 
   /* beer style */
@@ -231,10 +271,7 @@ body {
   .chair3 {
     margin-left: 380px;
   }
-
 }
-
-
 
 /* @media screen and (min-width: 1400px) and (max-width:1900px)and (orientation: portrait) {
   body {
@@ -243,34 +280,31 @@ body {
 } */
 
 @media screen and (min-width: 1200px) {
-
   /* wall style */
   #logo {
     width: 170px;
     height: 170px;
   }
-
   .screen {
     height: 230px;
     width: 600px;
+    overflow: auto;
+    white-space: nowrap;
   }
-
-
 }
 
 @media screen and (min-width: 1550px) {
-
   /* wall style */
   #logo {
     width: 350px;
     height: 350px;
   }
 
-
   .screen {
     height: 400px;
     width: 900px;
-    ;
+    overflow: auto;
+    white-space: nowrap;
   }
 
   /*table style */
