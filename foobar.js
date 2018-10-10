@@ -60,48 +60,26 @@ function beers() {
     dest.appendChild(klon);
   });
 }
+
+const modal = document.querySelector("#modal_container");
+const closeButton = document.querySelector("#closebutton");
+const openButton = document.querySelectorAll(".columns");
+
+openButton.forEach(function(window) {
+  window.addEventListener("click", showModal);
+});
+
+function showModal(window) {
+  console.log("Show modal");
+  modal.classList.remove("hidden");
+}
+
+closeButton.addEventListener("click", hideModal);
+
+function hideModal() {
+  console.log("Hide modal");
+  modal.classList.add("hidden");
+}
+
 // calculate price from alcohol%
 // display labels, names and price
-
-// FUNCTION TAPS - Larisa
-/* function taps(taps) {
-  // console.log(taps[0]);
-  // find taps, level, beer in tap,
-  // find label for that beer
-  // display the beerlable on the keg/tap
-  // calculate the position of the image with the beer
-  // display the level of the beer in the keg
-} */
-
-// FUNCTION DISPLAYNUMBER - Laise
-/* function displayNumber() {
-  // start animation "number comming out of machine"
-  // get data from the function getNumber and display on the ticket
-} */
-
-/* getNumber();
-// FUNCTION GETNUMBER
-function getNumber() {
-  // generete a consecutively number that will a one everytime numberbutton is pushed
-  let startNumber = 1;
-
-  // calculate what number in line the customer is (length +1)
-  console.log(`You are number ${FooBarData.queue.length + 1} in line`);
-  let queueNr = FooBarData.queue.length + 1;
-  // find template and destination
-  let temp = document.querySelector("[data-number-template]");
-  let dest = document.querySelector("[data-number-destination]");
-  // set destination to innerHTML
-  dest.innerHTML = "";
-
-  // ?? do I need to clone??
-  let clone = temp.cloneNode(true).content;
-  document.querySelector("[data-number]").textContent = queueNr;
-  document.querySelector("[data-number-template]").appendChild(clone);
-  console.log(queueNr);
-
-  // HTML
-  //<div data-number-destination></div>
-  //<div data-number-template>
-  //    <p> </p>
-} */

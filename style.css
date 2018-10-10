@@ -103,6 +103,33 @@ body {
   background: #f0c747;
   border-radius: 10px;
 }
+/* modal window style */
+
+#modal_container {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: azure;
+}
+
+#modal_window {
+  max-width: 80vw;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#closebutton {
+  cursor: pointer;
+}
 
 /* beer style */
 #beer {
