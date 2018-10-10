@@ -63,7 +63,7 @@ function beers() {
 
 const modal = document.querySelector("#modal_container");
 const closeButton = document.querySelector("#closebutton");
-const openButton = document.querySelectorAll(".columns");
+const openButton = document.querySelectorAll("#beer-name");
 
 openButton.forEach(function(window) {
   window.addEventListener("click", showModal);

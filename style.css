@@ -117,6 +117,7 @@ body {
   top: 0;
   left: 0;
   background-color: azure;
+  z-index: 1000;
 }
 
 #modal_window {
