@@ -25,7 +25,7 @@ body {
 
 .screen {
   width: 220px;
-  height: 150px;
+  height: 198px;
   background: #5b5a58;
   border: 8px solid black;
   display: block;
@@ -45,7 +45,15 @@ body {
   width: 100%;
   display: inline-block;
 }
-
+.screen h1 {
+  text-align: left;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  color: #fff;
+  font-weight: 100;
+  text-decoration: underline;
+}
 .columns {
   width: 100%;
   display: inline-block;
@@ -59,24 +67,33 @@ body {
 }
 
 #beer-img {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   float: left;
   background: blue;
-  margin-bottom: 0px;
+  margin-bottom: 5px;
   margin-left: 10px;
 }
 
 #beer-name {
   float: left;
   padding-left: 20px;
-  line-height: 0.6em;
+  line-height: 0.4em;
   margin-bottom: 1px;
+  position: relative;
+  top: -6px;
+  color: #fff;
 }
 #beer-price {
   float: right;
-  padding-right: 30px;
+  margin-right: 10px;
   margin-bottom: 1px;
+  line-height: 0.3em;
+  position: relative;
+  top: -10px;
+  padding: 0.25em;
+  background: #f0c747;
+  border-radius: 10px;
 }
 
 /* beer style */
@@ -153,7 +170,16 @@ body {
   }
 
   /* wall screen style */
-
+  .screen {
+    width: 220px;
+    height: 194px;
+  }
+  .screen h1 {
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+  }
   .columns {
     width: 100%;
     display: inline-block;
@@ -165,23 +191,25 @@ body {
     float: none;
     clear: left;
   }
-
   #beer-img {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     float: left;
     background: blue;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
     margin-left: 10px;
   }
+
   #beer-name {
     float: left;
     padding-left: 20px;
+    line-height: 0.4em;
     margin-bottom: 1px;
   }
   #beer-price {
     float: right;
-    padding-right: 30px;
+    padding-right: 10px;
+    line-height: 0.4em;
     margin-bottom: 1px;
   }
 
@@ -217,7 +245,7 @@ body {
 
   .screen {
     width: 450px;
-    height: 200px;
+    height: 241px;
     border: 8px solid black;
     display: block;
     margin: auto;
@@ -230,7 +258,7 @@ body {
     text-align: left;
     margin-top: 5px;
     margin-bottom: 5px;
-    padding-left: 20px;
+    padding-left: 10px;
   }
   .columns {
     width: 100%;
@@ -243,26 +271,27 @@ body {
     float: none;
     clear: left;
   }
-
   #beer-img {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     float: left;
     background: blue;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
     margin-left: 10px;
   }
+
   #beer-name {
     float: left;
     padding-left: 20px;
+    line-height: 0.4em;
     margin-bottom: 1px;
   }
   #beer-price {
     float: right;
-    padding-right: 30px;
+    padding-right: 10px;
+    line-height: 0.4em;
     margin-bottom: 1px;
   }
-
   /* table style */
   .chair1,
   .chair2,
@@ -302,7 +331,7 @@ body {
 
   .screen {
     width: 500px;
-    height: 200px;
+    height: 227px;
     border: 8px solid black;
     display: block;
     margin: auto;
@@ -315,7 +344,7 @@ body {
     text-align: left;
     margin-top: 5px;
     margin-bottom: 5px;
-    padding-left: 20px;
+    padding-left: 10px;
   }
 
   .screen-wrap {
@@ -325,6 +354,27 @@ body {
 
   .columns {
     width: 100%;
+  }
+  #beer-img {
+    width: 30px;
+    height: 30px;
+    float: left;
+    background: blue;
+    margin-bottom: 6px;
+    margin-left: 10px;
+  }
+
+  #beer-name {
+    float: left;
+    padding-left: 20px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
+  }
+  #beer-price {
+    float: right;
+    padding-right: 10px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
   }
 
   /* beer style */
@@ -377,9 +427,9 @@ body {
 
   .screen h1 {
     text-align: left;
-    margin-top: 5px;
+    margin-top: 7px;
     margin-bottom: 5px;
-    padding-left: 20px;
+    padding-left: 10px;
   }
 
   .screen-wrap {
@@ -389,6 +439,27 @@ body {
 
   .columns {
     width: 100%;
+  }
+  #beer-img {
+    width: 32px;
+    height: 32px;
+    float: left;
+    background: blue;
+    margin-bottom: 5px;
+    margin-left: 10px;
+  }
+
+  #beer-name {
+    float: left;
+    padding-left: 20px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
+  }
+  #beer-price {
+    float: right;
+    padding-right: 10px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
   }
 }
 
@@ -414,7 +485,6 @@ body {
   .screen h1 {
     text-align: left;
     margin-top: 5px;
-    margin-bottom: 5px;
     padding-left: 20px;
   }
   .screen-wrap {
@@ -424,6 +494,27 @@ body {
 
   .columns {
     width: 100%;
+  }
+  #beer-img {
+    width: 40px;
+    height: 40px;
+    float: left;
+    background: blue;
+    margin-bottom: 5px;
+    margin-left: 10px;
+  }
+
+  #beer-name {
+    float: left;
+    padding-left: 20px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
+  }
+  #beer-price {
+    float: right;
+    padding-right: 10px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
   }
 
   /*table style */
