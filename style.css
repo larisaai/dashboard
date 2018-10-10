@@ -92,12 +92,18 @@ body {
   right: 0px;
   width: 53%;
 }
-#your_number {
+#getNumber svg {
+  bottom: 0px;
   position: absolute;
-  bottom: 13%;
-  right: 5%;
+}
+#your_number {
+  /* position: absolute; */
+  display: block;
+  margin: auto;
+  bottom: 16%;
+  right: 7%;
   width: 40%;
-  font-size: 1.4em;
+  font-size: 1.3em;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   text-align: center;
 }
@@ -136,6 +142,7 @@ body {
     height: 5vh;
   }
 
+  /* table style (min 500px) */
   .chair1,
   .chair2 {
     display: block;
@@ -146,8 +153,15 @@ body {
   .chair2 {
     margin-left: 160px;
   }
+  #getNumber {
+    width: 44%;
+  }
+  #your_number {
+    width: 34%;
+    bottom: 18%;
+    font-size: 1.8em;
+  }
 }
-
 @media screen and (min-width: 800px) {
   /* wall style */
   #logo {
@@ -177,6 +191,15 @@ body {
 
   .chair3 {
     margin-left: 340px;
+  }
+
+  #getNumber {
+    width: 36%;
+  }
+  #your_number {
+    width: 25%;
+    bottom: 14%;
+    font-size: 2em;
   }
 }
 
@@ -226,6 +249,17 @@ body {
 
   .chair3 {
     margin-left: 380px;
+  }
+
+  #getNumber {
+    width: 30%;
+    right: 3%;
+  }
+  #your_number {
+    width: 21%;
+    bottom: 20%;
+    font-size: 2.1em;
+    right: 7%;
   }
 }
 

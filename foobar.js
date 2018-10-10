@@ -2,8 +2,12 @@
 
 window.addEventListener("DOMContentLoaded", init);
 
-// addEventListener on press numberbuttom, call function getNumber
+window.onload = function() {
+  let numberText = document.querySelector("#getNumber #number_text");
+  numberText.style.visibility = "hidden";
+};
 
+// addEventListener on press numberbuttom, call function getNumber
 // get data
 const FooBarObject = FooBar.getData(); // data is a string
 // convert data to json
@@ -14,15 +18,17 @@ function init() {
   console.log(FooBarData);
 
   //setInteval
-  setInterval(update, 1500);
+  setInterval(update, 2500);
 }
 //FUNCTION UPDATE, updates what was created in the previous function
 let data = JSON.parse(FooBar.getData());
+let firstQueueId;
 function update() {
   data = JSON.parse(FooBar.getData());
   handleBartenders(FooBarData.bartenders);
   beers(FooBarData.beertypes);
   taps(FooBarData.taps);
+  console.log(data);
 }
 
 //FUNCTION HANDLEBARTENDERS
@@ -72,16 +78,32 @@ async function getNumberMachine() {
 function hideText() {
   let text = document.querySelector("#getNumber #order_text");
   text.style.visibility = "hidden";
+
+  // show text on number
+  let numberText = document.querySelector("#getNumber #number_text");
+  numberText.style.visibility = "visible";
+
   getNumber();
 }
 
 // FUNCTION GETNUMBER
 // prints your number on the screen and counts down every time a customer is served
 function getNumber() {
+  // find first index queue id on click
+  firstQueueId = data.queue[0].id;
+  console.log(firstQueueId);
   // calculate what number in line the customer is (length +1)
-  let queueNr = FooBarData.queue.length + 1;
-  console.log(`You are number ${queueNr} in line`);
+  let queueNr = data.queue.length + 1;
 
-  document.getElementById("your_number").textContent =
-    "You are number " + queueNr + " in line";
+  // FUNCTION COUNTDOWN
+  function countdown() {
+    //if firstQueueId is < queueNr -1 from queueNr else nothing
+    if (firstQueueId <= queueNr) {
+      queueNr - 1;
+    }
+    console.log(queueNr);
+  }
+  // your_number div are placed in the svg file
+  document.getElementById("your_number").textContent = queueNr;
+  countdown();
 }
