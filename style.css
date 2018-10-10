@@ -66,9 +66,11 @@ body {
   margin-bottom: 0px;
   margin-left: 10px;
 }
+
 #beer-name {
   float: left;
   padding-left: 20px;
+  line-height: 0.6em;
   margin-bottom: 1px;
 }
 #beer-price {
