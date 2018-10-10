@@ -15,11 +15,16 @@ body {
 
 #logo {
   margin: 20px;
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
   display: block;
-  margin: auto;
-  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 3px solid #5b5a58;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 /* screen style*/
 
@@ -171,7 +176,7 @@ body {
 
   /* wall screen style */
   .screen {
-    width: 220px;
+    width: 373px;
     height: 201px;
   }
   .screen h1 {
@@ -211,6 +216,7 @@ body {
     padding-right: 10px;
     line-height: 0.4em;
     margin-bottom: 1px;
+    padding: 0.2em;
   }
 
   /* beer style */
