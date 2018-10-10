@@ -10,6 +10,7 @@ body {
   width: 100vw;
   height: 44vh;
   background-color: #b1aead;
+  position: relative;
 }
 
 #logo {
@@ -20,49 +21,31 @@ body {
   margin: auto;
   border: 1px solid black;
 }
+/* screen style*/
 
-/*.screen {
+.screen {
   width: 220px;
   height: 150px;
   background: #5b5a58;
   border: 8px solid black;
   display: block;
   margin: auto;
-  width: 100%;
-  overflow-x: scroll;
-  white-space: nowrap;
-  position: relative;
-}*/
-
-/* screen style*/
-
-.screen {
-  width: 300px;
-  height: 200px;
-  border: 8px solid black;
-  display: block;
-  margin: auto;
-  width: 100%;
   overflow-x: scroll;
   white-space: nowrap;
   position: relative;
 }
+
 .screen:after {
   content: "";
   display: table;
   clear: both;
 }
-/* .screen-wrap {
-  display: grid;
-  grid-template-columns: 50% 50%;
-} */
 
-.screen h1 {
-  text-align: left;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding-left: 20px;
+.screen-wrap {
+  width: 100%;
+  display: inline-block;
 }
+
 .columns {
   width: 100%;
   display: inline-block;
@@ -76,8 +59,8 @@ body {
 }
 
 #beer-img {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   float: left;
   background: blue;
   margin-bottom: 0px;
@@ -167,6 +150,39 @@ body {
     margin: auto;
   }
 
+  /* wall screen style */
+
+  .columns {
+    width: 100%;
+    display: inline-block;
+  }
+
+  .object {
+    width: 100%;
+    display: block;
+    float: none;
+    clear: left;
+  }
+
+  #beer-img {
+    width: 30px;
+    height: 30px;
+    float: left;
+    background: blue;
+    margin-bottom: 0px;
+    margin-left: 10px;
+  }
+  #beer-name {
+    float: left;
+    padding-left: 20px;
+    margin-bottom: 1px;
+  }
+  #beer-price {
+    float: right;
+    padding-right: 30px;
+    margin-bottom: 1px;
+  }
+
   /* beer style */
   #beer {
     height: 38vh;
@@ -195,14 +211,54 @@ body {
     height: 150px;
   }
 
+  /* wall screen style */
+
   .screen {
     width: 450px;
     height: 200px;
     border: 8px solid black;
     display: block;
     margin: auto;
-    overflow: auto;
+    overflow-x: scroll;
     white-space: nowrap;
+    position: relative;
+  }
+
+  .screen h1 {
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 20px;
+  }
+  .columns {
+    width: 100%;
+    display: inline-block;
+  }
+
+  .object {
+    width: 100%;
+    display: block;
+    float: none;
+    clear: left;
+  }
+
+  #beer-img {
+    width: 30px;
+    height: 30px;
+    float: left;
+    background: blue;
+    margin-bottom: 0px;
+    margin-left: 10px;
+  }
+  #beer-name {
+    float: left;
+    padding-left: 20px;
+    margin-bottom: 1px;
+  }
+  #beer-price {
+    float: right;
+    padding-right: 30px;
+    margin-bottom: 1px;
   }
 
   /* table style */
@@ -240,14 +296,33 @@ body {
     height: 150px;
   }
 
+  /* wall screen style */
+
   .screen {
     width: 500px;
     height: 200px;
     border: 8px solid black;
     display: block;
     margin: auto;
-    overflow: auto;
+    overflow-x: scroll;
     white-space: nowrap;
+    position: relative;
+  }
+
+  .screen h1 {
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 20px;
+  }
+
+  .screen-wrap {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .columns {
+    width: 100%;
   }
 
   /* beer style */
@@ -285,11 +360,33 @@ body {
     width: 170px;
     height: 170px;
   }
+
+  /* wall screen style */
+
   .screen {
     height: 230px;
     width: 600px;
-    overflow: auto;
+    display: block;
+    margin: auto;
+    overflow-x: scroll;
     white-space: nowrap;
+    position: relative;
+  }
+
+  .screen h1 {
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 20px;
+  }
+
+  .screen-wrap {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .columns {
+    width: 100%;
   }
 }
 
@@ -300,11 +397,31 @@ body {
     height: 350px;
   }
 
+  /* wall screen style */
+
   .screen {
     height: 400px;
     width: 900px;
-    overflow: auto;
+    display: block;
+    margin: auto;
+    overflow-x: scroll;
     white-space: nowrap;
+    position: relative;
+  }
+
+  .screen h1 {
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 20px;
+  }
+  .screen-wrap {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .columns {
+    width: 100%;
   }
 
   /*table style */
