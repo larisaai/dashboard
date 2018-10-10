@@ -21,10 +21,10 @@ let data = JSON.parse(FooBar.getData());
 function update() {
   handleBartenders(FooBarData.bartenders);
   beers(FooBarData.beertypes);
-  taps(FooBarData.taps);
+  //taps(FooBarData.taps);
 }
 
-//FUNCTION HANDLEBARTENDERS
+//FUNCTION HANDLEBARTENDERS - Larisa
 function handleBartenders(bartenders) {
   //console.log(FooBarData.bartenders.name);
   //console.log(bartenders[1]);
@@ -32,29 +32,54 @@ function handleBartenders(bartenders) {
   //display bartenders names
 }
 
-// FUNCTION BEERS
-function beers(beers) {
+// FUNCTION BEERS - Marie D
+
+beers();
+// FUNCTION BEERS - Marie D
+function beers() {
   //console.log(beers);
   // find beer names, labels and alcohol%
-  // calculate price from alcohol%
-  // display labels, names and price
+  let beerTypes = data.beertypes;
+  console.log(beerTypes);
+
+  let temp = document.querySelector("[data-template]");
+  let dest = document.querySelector("[data-destination]");
+
+  dest.innerHTML = "";
+
+  beerTypes.forEach(beer => {
+    let klon = temp.cloneNode(true).content;
+    klon
+      .querySelector("[data-beer-img]")
+      .setAttribute("src", "images" + "/" + beer.label);
+    klon.querySelector("[data-name]").textContent = beer.name;
+    klon.querySelector("[data-price]").textContent = beer.alc * 10;
+
+    //klon.querySelector(".ret ").addEventListener("click ", openModal);
+
+    dest.appendChild(klon);
+  });
 }
-// FUNCTION TAPS
-function taps(taps) {
+// calculate price from alcohol%
+// display labels, names and price
+
+// FUNCTION TAPS - Larisa
+/* function taps(taps) {
   // console.log(taps[0]);
   // find taps, level, beer in tap,
   // find label for that beer
   // display the beerlable on the keg/tap
   // calculate the position of the image with the beer
   // display the level of the beer in the keg
-}
+} */
 
-// FUNCTION DISPLAYNUMBER
-function displayNumber() {
+// FUNCTION DISPLAYNUMBER - Laise
+/* function displayNumber() {
   // start animation "number comming out of machine"
   // get data from the function getNumber and display on the ticket
-}
-getNumber();
+} */
+
+/* getNumber();
 // FUNCTION GETNUMBER
 function getNumber() {
   // generete a consecutively number that will a one everytime numberbutton is pushed
@@ -79,4 +104,4 @@ function getNumber() {
   //<div data-number-destination></div>
   //<div data-number-template>
   //    <p> </p>
-}
+} */

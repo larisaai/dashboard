@@ -2,6 +2,9 @@ body {
   margin: 0px;
   background-color: #b1aead;
 }
+/* .item-a {
+  display: none;
+} */
 
 /* mobile version */
 
@@ -61,7 +64,7 @@ body {
 }
 .columns {
   width: 100%;
-  display: inline-block;
+  display: block;
 }
 
 .object {
