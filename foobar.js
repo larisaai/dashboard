@@ -17,39 +17,47 @@ let FooBarData = JSON.parse(FooBarObject); //take this string and turn it into j
 
 //FUNCTION INIT, template, cloning, setup things that happens once
 function init() {
-
-  console.log(FooBarData);
+  //console.log(FooBarData);
   setupTaps(FooBarData.taps);
   showBartenders(FooBarData.bartenders);
-
   //setInteval
-
   setInterval(update, 1500);
 }
 
 let data = JSON.parse(FooBar.getData());
-
 let firstQueueId;
 let lastQueueId;
 let indexNr;
-
+let NewqueueNr;
 //FUNCTION UPDATE, updates what was created in the previous function
 function update() {
   data = JSON.parse(FooBar.getData());
- 
-  beers(FooBarData.beertypes);
-  taps(FooBarData.taps);
 
+  beers(FooBarData.beertypes);
+  taps(data.taps);
   // find where lastQueueId is in the queue at update
   indexNr = data.queue.map(e => e.id).indexOf(lastQueueId);
-  console.log(indexNr);
+  console.log(data);
+  console.log("i am indexNr" + indexNr);
+  // display new number in line  // loop
+  if (indexNr < queueNr) {
+    NewqueueNr = indexNr + 1;
+    console.log("i am newQueueNr" + NewqueueNr);
+    document.getElementById("your_number").textContent = NewqueueNr;
+  }
+  if (NewqueueNr <= 0) {
+    let itIsYourTurn = document.querySelector("#getNumber #it_is_your_turn");
+    itIsYourTurn.style.visibility = "visible";
+    let numberText = document.querySelector("#getNumber #number_text");
+    numberText.style.visibility = "hidden";
+  }
 }
 
 //FUNCTION HANDLEBARTENDERS
 
-console.log(FooBarData.bartenders)
+//console.log(FooBarData.bartenders);
 let names = FooBarData.bartenders;
-console.log(names)
+//console.log(names);
 
 //find bartenders names
 
@@ -57,13 +65,12 @@ console.log(names)
 const templateBartenders = document.querySelector(".workers").content;
 
 function showBartenders(handleBartenders) {
-  names.forEach(function (worker) {
+  names.forEach(function(worker) {
     const clone2 = templateBartenders.cloneNode(true);
     clone2.querySelector(".worker").textContent = worker.name;
-    document.querySelector('.boxworkers').appendChild(clone2);
-  })
+    document.querySelector(".boxworkers").appendChild(clone2);
+  });
 }
-
 
 // FUNCTION BEERS
 function beers(beers) {
@@ -74,18 +81,15 @@ function beers(beers) {
 }
 // FUNCTION TAPS
 const templateTaps = document.querySelector(".templateTap").content;
-
 function setupTaps(taps) {
-  // console.log(taps)
-
-  taps.forEach(function (tap) {
+  taps.forEach(function(tap) {
     const clone = templateTaps.cloneNode(true);
     // find taps, level, beer in tap
     // display the level of the beer in the keg
-    let height = tap.level * 215.5 / tap.capacity;
+    let height = (tap.level * 215.5) / tap.capacity;
     let Ypos = 217 - height;
-    clone.querySelector("#Layer_2 rect.cls-1").setAttribute('height', height);
-    clone.querySelector("#Layer_2 rect.cls-1").setAttribute('y', Ypos);
+    clone.querySelector("#Layer_2 rect.cls-1").setAttribute("height", height);
+    clone.querySelector("#Layer_2 rect.cls-1").setAttribute("y", Ypos);
 
     //having name of the beer on the taps intstead of the pictures, but we don't use it at this point
     // clone.querySelector(".bname").textContent = tap.beer;
@@ -96,29 +100,26 @@ function setupTaps(taps) {
         //show the right picture of the beer
         clone.querySelector(".smallpicture").src = "images/" + beer.label;
       }
-    })
-    console.log(data.beertypes)
-    document.querySelector('.bigboxtap').appendChild(clone);
-  })
+    });
+    //console.log(data.beertypes);
+    document.querySelector(".bigboxtap").appendChild(clone);
+  });
 }
-
 
 function taps(taps) {
   // console.log(taps)
-  const all = document.querySelectorAll("#Layer_2 rect.cls-1")
+  const all = document.querySelectorAll("#Layer_2 rect.cls-1");
 
-  taps.forEach(function (tap, index) {
-    const height = tap.level * 215.5 / 2500;
+  taps.forEach(function(tap, index) {
+    const height = (tap.level * 215.5) / 2500;
     let Ypos = 217 - height;
     // console.log("ypos is : " + Ypos);
     // console.log(height)
-    all[index].setAttribute('height', height);
-    all[index].setAttribute('y', Ypos);
-
-  })
-
+    all[index].setAttribute("height", height);
+    all[index].setAttribute("y", Ypos);
+  });
 }
-  
+
 getNumberMachine();
 
 // FUNCTION GETNUMBERMACHINE
@@ -130,8 +131,8 @@ async function getNumberMachine() {
   // put svg in html
   document.querySelector("#getNumber").innerHTML = svg;
   document.querySelector("#button").addEventListener("click", hideShowText);
-
 }
+
 // FUNCTION hideShowText
 // hide the text on the numbermachine
 function hideShowText() {
@@ -165,13 +166,4 @@ function getNumber() {
 
   // display your number on screen
   document.getElementById("your_number").textContent = queueNr;
-  countdown();
-}
-
-function countdown() {
-  console.log("countdown");
-  console.log(indexNr + 1);
-  // loop
-
-  // indexNr +1
 }

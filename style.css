@@ -34,7 +34,7 @@ body {
 /* beer style */
 #beer {
   position: relative;
-  background-color: #E2DAC2;
+  background-color: #e2dac2;
 
   width: 100vw;
   height: 36vh;
@@ -49,22 +49,16 @@ body {
 }
 
 @keyframes scrolling {
-
-
   50% {
-    transform: translateX(-30px)
+    transform: translateX(-30px);
   }
-
-
 }
-
 
 .beersContainer {
   width: 90vw;
 }
 
 .bigboxtap {
-
   margin-left: 15px;
   margin-right: -20px;
   display: grid;
@@ -73,18 +67,15 @@ body {
   overflow-x: scroll;
   white-space: nowrap;
   position: relative;
-
 }
 
 .boxtap {
   max-height: 130px;
 }
 
-
 ::-webkit-scrollbar {
   display: none;
 }
-
 
 .boxtap {
   margin-top: 40px;
@@ -118,15 +109,13 @@ rect.cls-2 {
 }
 
 .bname {
-
   text-align: center;
   z-index: 3;
   position: absolute;
   font-size: 10px;
-  color: #5B5A59;
+  color: #5b5a59;
   max-width: 50px;
   height: auto;
-
 }
 
 .under {
@@ -134,9 +123,8 @@ rect.cls-2 {
   bottom: -1px;
 }
 
-
 .undertap {
-  background-color: #5B5A59;
+  background-color: #5b5a59;
 
   height: 15px;
 }
@@ -144,7 +132,7 @@ rect.cls-2 {
 .underbeer {
   width: 100vw;
   height: 30px;
-  background-image: linear-gradient(#5B5A59, #808080);
+  background-image: linear-gradient(#5b5a59, #808080);
 
   opacity: 0.9;
 }
@@ -178,12 +166,15 @@ rect.cls-2 {
 .chair3 {
   display: none;
 }
+#button {
+  cursor: pointer;
+}
 
 #getNumber {
   position: absolute;
   bottom: 0px;
   right: 3%;
-  width: 53%;
+  width: 47%;
 }
 #getNumber svg {
   bottom: 0px;
@@ -199,6 +190,7 @@ rect.cls-2 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   text-align: center;
 }
+
 foreignObject {
   font-size: 6em;
 }
@@ -233,7 +225,6 @@ foreignObject {
     height: 38vh;
   }
 
-
   #scrollicon {
     display: none;
   }
@@ -241,7 +232,6 @@ foreignObject {
   .beersContainer {
     width: 90vw;
   }
-
 
   .underbeer {
     height: 5vh;
@@ -258,8 +248,8 @@ foreignObject {
   .chair2 {
     margin-left: 160px;
   }
-    #getNumber {
-    width: 44%;
+  #getNumber {
+    width: 37%;
   }
   #your_number {
     width: 34%;
@@ -274,7 +264,6 @@ foreignObject {
 
 @media screen and (min-width: 700px) {
   .boxtap {
-
     width: 70px;
     height: auto;
     margin-left: 0px;
@@ -282,11 +271,11 @@ foreignObject {
   }
 }
 
-
 @media screen and (min-width: 650px) {
   /* table */
   #getNumber {
-    width: 35%;
+    width: 30%;
+    right: 2%;
   }
 }
 
@@ -307,7 +296,6 @@ foreignObject {
 
   /* beer style */
   .boxtap {
-
     width: 70px;
     height: auto;
     margin-left: 0px;
@@ -321,12 +309,12 @@ foreignObject {
     display: block;
     width: 185px;
     height: 145px;
-    border: 6px solid #5F5341;
+    border: 6px solid #5f5341;
     border-radius: 10px;
     position: absolute;
     right: 30px;
     top: 20px;
-    background: #2D2C2C
+    background: #2d2c2c;
   }
 
   .working h3 {
@@ -338,7 +326,6 @@ foreignObject {
     text-decoration: underline;
     margin-top: 7px;
     margin-left: 7px;
-
   }
 
   .worker {
@@ -367,7 +354,8 @@ foreignObject {
   }
 
   #getNumber {
-    width: 30%;
+    width: 24%;
+    right: 2%;
   }
   #your_number {
     width: 25%;
@@ -407,20 +395,15 @@ foreignObject {
     margin-top: 27px;
     width: 78px;
     height: auto;
-
-
   }
 
   .working {
     right: 10%;
   }
 
-
   .underbeer {
     height: 5vh;
   }
-
-
 
   /* table style */
   .chair1,
@@ -439,8 +422,8 @@ foreignObject {
   }
 
   #getNumber {
-    width: 25%;
-    right: 3%;
+    width: 20%;
+    right: 1%;
   }
   #your_number {
     width: 21%;
@@ -469,7 +452,6 @@ foreignObject {
     width: 600px;
   }
 
-
   /* beer style */
   .beersContainer {
     width: 60vw;
@@ -481,7 +463,8 @@ foreignObject {
 
   /* table */
   #getNumber {
-    width: 20%;
+    width: 19%;
+    right: 1%;
   }
 }
 
@@ -493,10 +476,8 @@ foreignObject {
   }
 
   .screen {
-
     height: 300px;
     width: 700px;
-
   }
 
   /* beer style */
@@ -507,7 +488,7 @@ foreignObject {
   }
 
   .working {
-    right: 30%;
+    right: 27%;
   }
 
   /*table style */
@@ -533,7 +514,7 @@ foreignObject {
 
 @media screen and (min-width: 1750px) {
   .working {
-    right: 100%;
+    right: 28%;
   }
 
   /* table */
