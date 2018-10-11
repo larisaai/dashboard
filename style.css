@@ -34,25 +34,118 @@ body {
 /* beer style */
 #beer {
   position: relative;
-  background-color: #d5cdb4;
+  background-color: #E2DAC2;
+
   width: 100vw;
   height: 36vh;
 }
 
-.under {
+#scrollicon {
+  width: 35px;
   position: absolute;
-  bottom: 0;
+  right: 10px;
+  top: 10px;
+  animation: scrolling 3s ease-out 7;
 }
 
-.underkage {
-  background-color: #5b5a59;
+@keyframes scrolling {
+
+
+  50% {
+    transform: translateX(-30px)
+  }
+
+
+}
+
+
+.beersContainer {
+  width: 90vw;
+}
+
+.bigboxtap {
+
+  margin-left: 15px;
+  margin-right: -20px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 10px;
+  overflow-x: scroll;
+  white-space: nowrap;
+  position: relative;
+
+}
+
+.boxtap {
+  max-height: 130px;
+}
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+.boxtap {
+  margin-top: 40px;
+  width: 60px;
+  height: 190px;
+  position: relative;
+}
+
+rect.cls-2 {
+  box-shadow: 10px 0 5px -2px #888;
+}
+
+.working {
+  display: none;
+}
+
+.smallpicture {
+  display: block;
+  width: 29px;
+  height: 29px;
+  z-index: 3;
+  position: absolute;
+  margin-left: 32%;
+  margin-top: 10px;
+}
+
+/* here is the name of the beer that is in taps, but we are not using it aat this point */
+.bnamecontainer {
+  display: none;
+  margin: auto;
+}
+
+.bname {
+
+  text-align: center;
+  z-index: 3;
+  position: absolute;
+  font-size: 10px;
+  color: #5B5A59;
+  max-width: 50px;
+  height: auto;
+
+}
+
+.under {
+  position: absolute;
+  bottom: -1px;
+}
+
+
+.undertap {
+  background-color: #5B5A59;
+
   height: 15px;
 }
 
 .underbeer {
   width: 100vw;
-  height: 3vh;
-  background-image: linear-gradient(#5b5a59, #808080);
+  height: 30px;
+  background-image: linear-gradient(#5B5A59, #808080);
+
   opacity: 0.9;
 }
 
@@ -140,6 +233,16 @@ foreignObject {
     height: 38vh;
   }
 
+
+  #scrollicon {
+    display: none;
+  }
+
+  .beersContainer {
+    width: 90vw;
+  }
+
+
   .underbeer {
     height: 5vh;
   }
@@ -155,7 +258,7 @@ foreignObject {
   .chair2 {
     margin-left: 160px;
   }
-  #getNumber {
+    #getNumber {
     width: 44%;
   }
   #your_number {
@@ -169,12 +272,24 @@ foreignObject {
   }
 }
 
+@media screen and (min-width: 700px) {
+  .boxtap {
+
+    width: 70px;
+    height: auto;
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+}
+
+
 @media screen and (min-width: 650px) {
   /* table */
   #getNumber {
     width: 35%;
   }
 }
+
 @media screen and (min-width: 800px) {
   /* wall style */
   #logo {
@@ -188,6 +303,51 @@ foreignObject {
     border: 3px solid black;
     display: block;
     margin: auto;
+  }
+
+  /* beer style */
+  .boxtap {
+
+    width: 70px;
+    height: auto;
+    margin-left: 0px;
+  }
+
+  .beersContainer {
+    width: 70vw;
+  }
+
+  .working {
+    display: block;
+    width: 185px;
+    height: 145px;
+    border: 6px solid #5F5341;
+    border-radius: 10px;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    background: #2D2C2C
+  }
+
+  .working h3 {
+    text-align: center;
+    font-family: "Chalky";
+    color: white;
+    font-size: 20px;
+    font-weight: 2;
+    text-decoration: underline;
+    margin-top: 7px;
+    margin-left: 7px;
+
+  }
+
+  .worker {
+    text-align: center;
+    font-family: "Chalky";
+    color: white;
+    font-size: 20px;
+    font-weight: 100;
+    margin-top: -20px;
   }
 
   /* table style */
@@ -243,10 +403,24 @@ foreignObject {
   }
 
   /* beer style */
+  .boxtap {
+    margin-top: 27px;
+    width: 78px;
+    height: auto;
+
+
+  }
+
+  .working {
+    right: 10%;
+  }
+
 
   .underbeer {
     height: 5vh;
   }
+
+
 
   /* table style */
   .chair1,
@@ -276,10 +450,12 @@ foreignObject {
   }
 }
 
-/* @media screen and (min-width: 1400px) and (max-width:1900px)and (orientation: portrait) {
-  body {
-    width: 70%;
-  }*/
+/* 
+@media screen and (min-width: 1000px) {
+  .working {
+    right: 100px;
+  }
+} */
 
 @media screen and (min-width: 1200px) {
   /* wall style */
@@ -293,8 +469,17 @@ foreignObject {
     width: 600px;
   }
 
-  /* table */
 
+  /* beer style */
+  .beersContainer {
+    width: 60vw;
+  }
+
+  .working {
+    right: 20%;
+  }
+
+  /* table */
   #getNumber {
     width: 20%;
   }
@@ -303,33 +488,52 @@ foreignObject {
 @media screen and (min-width: 1550px) {
   /* wall style */
   #logo {
-    width: 350px;
-    height: 350px;
+    width: 150px;
+    height: 150px;
   }
 
   .screen {
-    height: 400px;
-    width: 900px;
+
+    height: 300px;
+    width: 700px;
+
+  }
+
+  /* beer style */
+  .boxtap {
+    margin-top: 45px;
+    width: 88px;
+    height: auto;
+  }
+
+  .working {
+    right: 30%;
   }
 
   /*table style */
 
   .chairs {
-    margin-left: 100px;
+    margin-left: 60px;
   }
 
   .chair1,
   .chair2,
   .chair3 {
-    width: 230px;
+    width: 135px;
   }
 
   .chair2 {
-    margin-left: 350px;
+    margin-left: 220px;
   }
 
   .chair3 {
-    margin-left: 680px;
+    margin-left: 420px;
+  }
+}
+
+@media screen and (min-width: 1750px) {
+  .working {
+    right: 100%;
   }
 
   /* table */
