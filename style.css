@@ -115,14 +115,26 @@ body {
 }
 
 #popup_content {
-  width: 50%;
-  height: 50%;
+  width: 73%;
+  height: auto;
   position: fixed;
-  /* overflow: scroll; */
-  margin-left: 25%;
+  overflow: scroll;
+  margin-left: 14%;
   margin-top: 10%;
   background: white;
-  /*pointer-events: none;*/
+  padding-bottom: 10%;
+}
+.popup_pris {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+.discription {
+  font-size: 1em;
+  font-weight: 200;
+}
+#closeimg {
+  width: 40%;
+  height: 40%;
 }
 
 .beskrivelse {
@@ -131,7 +143,10 @@ body {
   margin-top: 5%;
   padding: 5%;
 }
-
+.single_img {
+  width: 80%;
+  padding-left: 10%;
+}
 .single_name {
   background-color: none;
   max-width: 93.6vw;
@@ -143,9 +158,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.single_img {
-  width: 50%;
-}
+
 .closebutton {
   pointer-events: auto;
 }
@@ -778,6 +791,13 @@ foreignObject {
     line-height: 0.4em;
     margin-bottom: 1px;
   }
+  #popup_content {
+    width: 42%;
+    height: auto;
+    margin-left: 29%;
+    margin-top: 10%;
+    padding-bottom: 5%;
+  }
 
   /* beer style */
   .beersContainer {
@@ -852,6 +872,13 @@ foreignObject {
   .screen {
     height: 300px;
     width: 700px;
+  }
+  #popup_content {
+    width: 42%;
+    height: auto;
+    margin-left: 29%;
+    margin-top: 10%;
+    padding-bottom: 5%;
   }
 
   /* beer style */

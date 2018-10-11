@@ -117,9 +117,11 @@ function visModal(showBeer) {
   document
     .querySelector("[data-singleImg]")
     .setAttribute("src", "images" + "/" + showBeer.label);
+  document.querySelector("[data-titel]").textContent = showBeer.name;
   document.querySelector("[data-discription]").textContent =
-    showBeer.discription;
-  document.querySelector("[data-pris]").textContent = showBeer.alc + ",- kr";
+    showBeer.description.overallImpression;
+  document.querySelector("[data-pris]").textContent =
+    showBeer.alc * 10 + ",- kr";
   document.querySelector("[data-button]").addEventListener("click", closeModal);
   // console.log("pop-up klikket");
 }
