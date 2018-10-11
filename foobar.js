@@ -4,7 +4,9 @@ window.addEventListener("DOMContentLoaded", init);
 
 window.onload = function() {
   let numberText = document.querySelector("#getNumber #number_text");
+  let itIsYourTurn = document.querySelector("#getNumber #it_is_your_turn");
   numberText.style.visibility = "hidden";
+  itIsYourTurn.style.visibility = "hidden";
 };
 
 // addEventListener on press numberbuttom, call function getNumber
@@ -15,20 +17,27 @@ const FooBarData = JSON.parse(FooBarObject); //take this string and turn it into
 
 //FUNCTION INIT, template, cloning, setup things that happens once
 function init() {
-  console.log(FooBarData);
+  // console.log(FooBarData);
 
   //setInteval
-  setInterval(update, 2500);
+  setInterval(update, 1500);
 }
-//FUNCTION UPDATE, updates what was created in the previous function
+
 let data = JSON.parse(FooBar.getData());
 let firstQueueId;
+let lastQueueId;
+let indexNr;
+
+//FUNCTION UPDATE, updates what was created in the previous function
 function update() {
   data = JSON.parse(FooBar.getData());
   handleBartenders(FooBarData.bartenders);
   beers(FooBarData.beertypes);
   taps(FooBarData.taps);
-  console.log(data);
+
+  // find where lastQueueId is in the queue at update
+  indexNr = data.queue.map(e => e.id).indexOf(lastQueueId);
+  console.log(indexNr);
 }
 
 //FUNCTION HANDLEBARTENDERS
@@ -56,26 +65,21 @@ function taps(taps) {
   // display the level of the beer in the keg
 }
 
-// FUNCTION DISPLAYNUMBER
-function displayNumber() {
-  // start animation "number comming out of machine"
-  // get data from the function getNumber and display on the ticket
-}
 getNumberMachine();
 
 // FUNCTION GETNUMBERMACHINE
 async function getNumberMachine() {
   //load svg
-  let numberSvg = await fetch("svg/numbermachine.svg");
+  let numberSvg = await fetch("svg/numbermachine5.svg");
   // interpretate svg as text
   let svg = await numberSvg.text();
   // put svg in html
   document.querySelector("#getNumber").innerHTML = svg;
-  document.querySelector("#button").addEventListener("click", hideText);
+  document.querySelector("#button").addEventListener("click", hideShowText);
 }
-// FUNCTION HIDETEXT
+// FUNCTION hideShowText
 // hide the text on the numbermachine
-function hideText() {
+function hideShowText() {
   let text = document.querySelector("#getNumber #order_text");
   text.style.visibility = "hidden";
 
@@ -85,25 +89,33 @@ function hideText() {
 
   getNumber();
 }
-
-// FUNCTION GETNUMBER
-// prints your number on the screen and counts down every time a customer is served
+let queueNr;
+let lastQueueIndex;
+// FUNCTION GETNUMBER // print your number on the screen and counts down every time a customer is served
 function getNumber() {
-  // find first index queue id on click
+  // find first index of queue id
   firstQueueId = data.queue[0].id;
-  console.log(firstQueueId);
-  // calculate what number in line the customer is (length +1)
-  let queueNr = data.queue.length + 1;
 
-  // FUNCTION COUNTDOWN
-  function countdown() {
-    //if firstQueueId is < queueNr -1 from queueNr else nothing
-    if (firstQueueId <= queueNr) {
-      queueNr - 1;
-    }
-    console.log(queueNr);
-  }
-  // your_number div are placed in the svg file
+  //find last index id
+  lastQueueIndex = data.queue.length - 1;
+  console.log("i am last queue id " + data.queue[lastQueueIndex].id);
+  lastQueueId = data.queue[lastQueueIndex].id;
+
+  //console.log("I am first Id " + firstQueueId);
+
+  // calculate what number in line the customer is (length +1)
+  queueNr = data.queue.length + 1;
+  console.log("you are nr " + queueNr);
+
+  // display your number on screen
   document.getElementById("your_number").textContent = queueNr;
   countdown();
+}
+
+function countdown() {
+  console.log("countdown");
+  console.log(indexNr + 1);
+  // loop
+
+  // indexNr +1
 }

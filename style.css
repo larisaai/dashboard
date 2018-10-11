@@ -89,7 +89,7 @@ body {
 #getNumber {
   position: absolute;
   bottom: 0px;
-  right: 0px;
+  right: 3%;
   width: 53%;
 }
 #getNumber svg {
@@ -97,7 +97,6 @@ body {
   position: absolute;
 }
 #your_number {
-  /* position: absolute; */
   display: block;
   margin: auto;
   bottom: 16%;
@@ -106,6 +105,9 @@ body {
   font-size: 1.3em;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   text-align: center;
+}
+foreignObject {
+  font-size: 6em;
 }
 @media screen and (min-width: 500px) {
   /* wall style */
@@ -161,6 +163,17 @@ body {
     bottom: 18%;
     font-size: 1.8em;
   }
+
+  foreignObject {
+    font-size: 5em;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  /* table */
+  #getNumber {
+    width: 35%;
+  }
 }
 @media screen and (min-width: 800px) {
   /* wall style */
@@ -194,7 +207,7 @@ body {
   }
 
   #getNumber {
-    width: 36%;
+    width: 30%;
   }
   #your_number {
     width: 25%;
@@ -252,7 +265,7 @@ body {
   }
 
   #getNumber {
-    width: 30%;
+    width: 25%;
     right: 3%;
   }
   #your_number {
@@ -266,8 +279,7 @@ body {
 /* @media screen and (min-width: 1400px) and (max-width:1900px)and (orientation: portrait) {
   body {
     width: 70%;
-  }
-} */
+  }*/
 
 @media screen and (min-width: 1200px) {
   /* wall style */
@@ -279,6 +291,12 @@ body {
   .screen {
     height: 230px;
     width: 600px;
+  }
+
+  /* table */
+
+  #getNumber {
+    width: 20%;
   }
 }
 
@@ -312,5 +330,11 @@ body {
 
   .chair3 {
     margin-left: 680px;
+  }
+
+  /* table */
+
+  #getNumber {
+    width: 19%;
   }
 }
