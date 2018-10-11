@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138.02268 369.15072">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #969393;
+        stroke-width: 3px;
+      }
+
+      .cls-1, .cls-3, .cls-4 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        fill: #5b5a59;
+      }
+
+      .cls-3 {
+        fill: #969393;
+        stroke-width: 2px;
+      }
+
+      .cls-3, .cls-4 {
+        stroke: #7f7e7e;
+      }
+
+      .cls-4 {
+        fill: #a5a4a4;
+      }
+    </style>
+  </defs>
+  <title>2Asset 2</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1_copy" data-name="Layer 1 copy">
+      <rect class="cls-1" x="2.76758" y="1.5" width="132" height="215" rx="5.66929" ry="5.66929"/>
+      <polyline class="cls-2" points="134.768 361.422 3.126 361.422 3.126 369.151 134.562 369.151"/>
+      <path class="cls-3" d="M135.76758,216.5h-134s-13-25,68-23C69.76758,193.5,147.76758,191.5,135.76758,216.5Z"/>
+      <path class="cls-3" d="M90.62356,193.5H48.01167s-4.134-25,21.62394-23C69.63561,170.5,94.43955,168.5,90.62356,193.5Z"/>
+      <path class="cls-2" d="M65.50423,247.96959l-.07758-13.734s.51133-37.59467-8.98766-55.25225c0,0-7.32392-16.94791-3.76216-26.36554,0,0,4.26329-13.03483,22.33579-13.13691,0,0,22.79968,4.93007,14.62506,29.55556,0,0-12.15674,23.68366-11.19489,65.84757l.0735,13.01206Z"/>
+      <rect class="cls-3" x="54.76758" y="199.5" width="32" height="11.33859" rx="5.66929" ry="5.66929"/>
+      <circle class="cls-4" cx="35.26758" cy="206" r="4.5"/>
+      <circle class="cls-4" cx="105.26758" cy="205" r="4.5"/>
+      <circle class="cls-2" cx="35.26758" cy="196" r="1.5"/>
+      <circle class="cls-2" cx="105.26758" cy="205" r="1.5"/>
+    </g>
+  </g>
+</svg>

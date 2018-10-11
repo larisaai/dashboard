@@ -1,8 +1,10 @@
 body {
   margin: 0px;
-  background-color: #B1AEAD;
-
+  background-color: #b1aead;
 }
+/* .item-a {
+  display: none;
+} */
 
 /* mobile version */
 
@@ -10,55 +12,292 @@ body {
 #wall {
   width: 100vw;
   height: 44vh;
-  background-color: #B1AEAD;
+  background-color: #b1aead;
   position: relative;
 }
 
 #logo {
-
   margin: 20px;
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
   display: block;
-  margin: auto;
-  border: 1px solid black;
-
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 3px solid #5b5a58;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
+/* screen style*/
 
 .screen {
-  width: 220px;
-  height: 150px;
-  border: 3px solid black;
+  width: 260px;
+  height: 198px;
+  background: #5b5a58;
+  border: 8px solid black;
   display: block;
   margin: auto;
-  margin-top: 20px;
+  overflow-x: scroll;
+  white-space: nowrap;
+  position: relative;
+}
 
+.screen:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* .screen-wrap {
+  width: 100%;
+  display: inline-block;
+} */
+.screen h1 {
+  text-align: left;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  color: #fff;
+  font-weight: 100;
+  text-decoration: underline;
+}
+.columns {
+  width: 100%;
+  display: block;
+}
+
+.object {
+  width: 100%;
+  display: block;
+  float: none;
+  clear: left;
+}
+
+#beer-img {
+  width: 25px;
+  height: 25px;
+  float: left;
+  background: blue;
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+
+#beer-name {
+  float: left;
+  padding-left: 20px;
+  line-height: 0.4em;
+  margin-bottom: 1px;
+  position: relative;
+  top: -6px;
+  color: #fff;
+}
+#beer-price {
+  float: right;
+  margin-right: 10px;
+  margin-bottom: 1px;
+  line-height: 0.3em;
+  position: relative;
+  top: -10px;
+  padding: 0.25em;
+  background: #f0c747;
+  border-radius: 10px;
+}
+/* modal window style */
+#popup {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  z-index: 1000;
+  opacity: 0;
+  transition: 1s;
+}
+
+#popup_content {
+  width: 73%;
+  height: auto;
+  position: fixed;
+  overflow: scroll;
+  margin-left: 14%;
+  margin-top: 10%;
+  background: white;
+  padding-bottom: 10%;
+}
+.popup_pris {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+.discription {
+  font-size: 1em;
+  font-weight: 200;
+}
+#closeimg {
+  width: 40%;
+  height: 40%;
+}
+
+.beskrivelse {
+  background-color: none;
+  height: auto;
+  margin-top: 5%;
+  padding: 5%;
+}
+.single_img {
+  width: 80%;
+  padding-left: 10%;
+}
+.single_name {
+  background-color: none;
+  max-width: 93.6vw;
+  margin: 0;
+  margin-bottom: 2vh;
+  color: white;
+}
+.single_info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.closebutton {
+  pointer-events: auto;
+}
+
+[main-title] {
+  /* override pointer-events: none set by app-toolbar */
+  pointer-events: auto;
+  /* set margin-right so title won't be on top of the 2 buttons on the right */
+  margin-right: 100px;
+}
+
+/* knap til lukning af modalvindue */
+
+.bar4 {
+  transform: rotate(-45deg) translate(-7px, 4px);
+  background-color: #f3c93f;
+  border-style: solid;
+  border-color: #f3c93f;
+}
+
+.bar5 {
+  transform: rotate(45deg) translate(-7px, -5px);
+  background-color: #f3c93f;
+  border-style: solid;
+  border-color: #f3c93f;
+}
+
+.knap {
+  background-color: rgba(0, 0, 0, 0);
+  height: 35px;
+  width: 35px;
+  border-style: none;
+  margin: 6px;
+  left: 100px;
+  padding: 0;
 }
 
 /* beer style */
 #beer {
   position: relative;
-  background-color: #D5CDB4;
+
+  background-color: #e2dac2;
+
   width: 100vw;
   height: 36vh;
+}
 
+#scrollicon {
+  width: 35px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  animation: scrolling 3s ease-out 7;
+}
+
+@keyframes scrolling {
+  50% {
+    transform: translateX(-30px);
+  }
+}
+
+.beersContainer {
+  width: 90vw;
+}
+
+.bigboxtap {
+  margin-left: 15px;
+  margin-right: -20px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 10px;
+  overflow-x: scroll;
+  white-space: nowrap;
+  position: relative;
+}
+
+.boxtap {
+  max-height: 130px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.boxtap {
+  margin-top: 40px;
+  width: 60px;
+  height: 190px;
+  position: relative;
+}
+
+rect.cls-2 {
+  box-shadow: 10px 0 5px -2px #888;
+}
+
+.working {
+  display: none;
+}
+
+.smallpicture {
+  display: block;
+  width: 29px;
+  height: 29px;
+  z-index: 3;
+  position: absolute;
+  margin-left: 32%;
+  margin-top: 10px;
+}
+
+/* here is the name of the beer that is in taps, but we are not using it aat this point */
+.bnamecontainer {
+  display: none;
+  margin: auto;
+}
+
+.bname {
+  text-align: center;
+  z-index: 3;
+  position: absolute;
+  font-size: 10px;
+  color: #5b5a59;
+  max-width: 50px;
+  height: auto;
 }
 
 .under {
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
 }
 
-.underkage {
-  background-color: #5B5A59;
+.undertap {
+  background-color: #5b5a59;
   height: 15px;
 }
 
 .underbeer {
-
   width: 100vw;
-  height: 3vh;
-  background-image: linear-gradient(#5B5A59, #808080);
+  height: 30px;
+  background-image: linear-gradient(#5b5a59, #808080);
   opacity: 0.9;
 }
 
@@ -76,7 +315,6 @@ body {
   height: 15vh;
   background-image: linear-gradient(black, #808080);
   opacity: 0.4;
-
 }
 
 .chair1,
@@ -92,9 +330,36 @@ body {
 .chair3 {
   display: none;
 }
+#button {
+  cursor: pointer;
+}
+
+#getNumber {
+  position: absolute;
+  bottom: 0px;
+  right: 3%;
+  width: 47%;
+}
+#getNumber svg {
+  bottom: 0px;
+  position: absolute;
+}
+#your_number {
+  display: block;
+  margin: auto;
+  bottom: 16%;
+  right: 7%;
+  width: 40%;
+  font-size: 1.3em;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
+}
+
+foreignObject {
+  font-size: 6em;
+}
 
 @media screen and (min-width: 500px) {
-
   /* wall style */
   #wall {
     height: 42vh;
@@ -107,20 +372,54 @@ body {
   }
 
   #logo {
-
     width: 100px;
     height: 100px;
     margin: auto;
-
   }
 
+  /* wall screen style */
   .screen {
-    width: 300px;
-    height: 200px;
-    border: 3px solid black;
+    width: 373px;
+    height: 201px;
+  }
+  .screen h1 {
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+  }
+  .columns {
+    width: 100%;
     display: block;
-    margin: auto;
+  }
 
+  .object {
+    width: 100%;
+    display: block;
+    float: none;
+    clear: left;
+  }
+  #beer-img {
+    width: 25px;
+    height: 25px;
+    float: left;
+    background: blue;
+    margin-bottom: 5px;
+    margin-left: 10px;
+  }
+
+  #beer-name {
+    float: left;
+    padding-left: 20px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
+  }
+  #beer-price {
+    float: right;
+    padding-right: 10px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
+    padding: 0.2em;
   }
 
   /* beer style */
@@ -128,11 +427,19 @@ body {
     height: 38vh;
   }
 
+  #scrollicon {
+    display: none;
+  }
+
+  .beersContainer {
+    width: 90vw;
+  }
 
   .underbeer {
     height: 5vh;
   }
 
+  /* table style (min 500px) */
   .chair1,
   .chair2 {
     display: block;
@@ -144,27 +451,139 @@ body {
     margin-left: 160px;
   }
 
+  #getNumber {
+    width: 37%;
+  }
+  #your_number {
+    width: 34%;
+    bottom: 18%;
+    font-size: 1.8em;
+  }
 
+  foreignObject {
+    font-size: 5em;
+  }
+}
 
+@media screen and (min-width: 700px) {
+  .boxtap {
+    width: 70px;
+    height: auto;
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  /* table */
+  #getNumber {
+    width: 30%;
+    right: 2%;
+  }
 }
 
 @media screen and (min-width: 800px) {
-
   /* wall style */
   #logo {
     width: 150px;
     height: 150px;
   }
 
+  /* wall screen style */
+
   .screen {
     width: 450px;
-    height: 200px;
-    border: 3px solid black;
+    height: 241px;
+    border: 8px solid black;
     display: block;
     margin: auto;
 
+    overflow-x: scroll;
+    white-space: nowrap;
+    position: relative;
   }
 
+  .screen h1 {
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+  }
+  .columns {
+    width: 100%;
+    display: block;
+  }
+
+  /* beer style */
+  .boxtap {
+    width: 70px;
+    height: auto;
+    margin-left: 0px;
+  }
+
+  .beersContainer {
+    width: 70vw;
+  }
+
+  .working {
+    display: block;
+    width: 185px;
+    height: 145px;
+    border: 6px solid #5f5341;
+    border-radius: 10px;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    background: #2d2c2c;
+  }
+
+  .working h3 {
+    text-align: center;
+    font-family: "Chalky";
+    color: white;
+    font-size: 20px;
+    font-weight: 2;
+    text-decoration: underline;
+    margin-top: 7px;
+    margin-left: 7px;
+  }
+
+  .worker {
+    text-align: center;
+    font-family: "Chalky";
+    color: white;
+    font-size: 20px;
+    font-weight: 100;
+    margin-top: -20px;
+  }
+
+  .object {
+    width: 100%;
+    display: block;
+    float: none;
+    clear: left;
+  }
+  #beer-img {
+    width: 35px;
+    height: 35px;
+    float: left;
+    background: blue;
+    margin-bottom: 4px;
+    margin-left: 10px;
+  }
+
+  #beer-name {
+    float: left;
+    padding-left: 20px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
+  }
+  #beer-price {
+    float: right;
+    padding-right: 10px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
+  }
   /* table style */
   .chair1,
   .chair2,
@@ -180,11 +599,20 @@ body {
   .chair3 {
     margin-left: 340px;
   }
+
+  #getNumber {
+    width: 24%;
+    right: 2%;
+  }
+  #your_number {
+    width: 25%;
+    bottom: 14%;
+    font-size: 2em;
+  }
 }
 
 /* tablet version */
 @media screen and (min-width: 1024px) {
-
   /* wall style */
 
   #wall {
@@ -201,16 +629,71 @@ body {
     height: 150px;
   }
 
+  /* wall screen style */
+
   .screen {
     width: 500px;
-    height: 200px;
-    border: 3px solid black;
+    height: 227px;
+    border: 8px solid black;
     display: block;
     margin: auto;
+    overflow-x: scroll;
+    white-space: nowrap;
+    position: relative;
+  }
 
+  .screen h1 {
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+  }
+
+  /*   .screen-wrap {
+    display: grid;
+    grid-template-columns: 50% 50%; 
+  } */
+
+  [data-destination] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .columns {
+    width: 100%;
+  }
+  #beer-img {
+    width: 30px;
+    height: 30px;
+    float: left;
+    background: blue;
+    margin-bottom: 6px;
+    margin-left: 10px;
+  }
+
+  #beer-name {
+    float: left;
+    padding-left: 20px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
+  }
+  #beer-price {
+    float: right;
+    padding-right: 10px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
   }
 
   /* beer style */
+  .boxtap {
+    margin-top: 27px;
+    width: 78px;
+    height: auto;
+  }
+
+  .working {
+    right: 10%;
+  }
 
   .underbeer {
     height: 5vh;
@@ -232,64 +715,212 @@ body {
     margin-left: 380px;
   }
 
+  #getNumber {
+    width: 20%;
+    right: 1%;
+  }
+  #your_number {
+    width: 21%;
+    bottom: 20%;
+    font-size: 2.1em;
+    right: 7%;
+  }
 }
 
-
-
-/* @media screen and (min-width: 1400px) and (max-width:1900px)and (orientation: portrait) {
-  body {
-    width: 70%;
+/* 
+@media screen and (min-width: 1000px) {
+  .working {
+    right: 100px;
   }
 } */
 
 @media screen and (min-width: 1200px) {
-
   /* wall style */
   #logo {
     width: 170px;
     height: 170px;
   }
 
+  /* wall screen style */
+
   .screen {
     height: 230px;
     width: 600px;
+    display: block;
+    margin: auto;
+    overflow-x: scroll;
+    white-space: nowrap;
+    position: relative;
   }
 
+  .screen h1 {
+    text-align: left;
+    margin-top: 7px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+  }
 
+  [data-destination] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* .columns {
+     width: 100%;
+    display: block;
+  }*/
+
+  #beer-img {
+    width: 32px;
+    height: 32px;
+    float: left;
+    background: blue;
+    margin-bottom: 5px;
+    margin-left: 10px;
+  }
+
+  #beer-name {
+    float: left;
+    padding-left: 20px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
+  }
+  #beer-price {
+    float: right;
+    padding-right: 10px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
+  }
+  #popup_content {
+    width: 42%;
+    height: auto;
+    margin-left: 29%;
+    margin-top: 10%;
+    padding-bottom: 5%;
+  }
+
+  /* beer style */
+  .beersContainer {
+    width: 60vw;
+  }
+
+  .working {
+    right: 20%;
+  }
+
+  /* table */
+  #getNumber {
+    width: 19%;
+    right: 1%;
+  }
 }
 
 @media screen and (min-width: 1550px) {
-
   /* wall style */
   #logo {
-    width: 350px;
-    height: 350px;
+    width: 150px;
+    height: 150px;
   }
 
+  /* wall screen style */
 
   .screen {
     height: 400px;
     width: 900px;
-    ;
+    display: block;
+    margin: auto;
+    overflow-x: scroll;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .screen h1 {
+    text-align: left;
+    margin-top: 5px;
+    padding-left: 20px;
+  }
+  /*   .screen-wrap {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  } */
+
+  .columns {
+    width: 100%;
+  }
+  #beer-img {
+    width: 40px;
+    height: 40px;
+    float: left;
+    background: blue;
+    margin-bottom: 5px;
+    margin-left: 10px;
+  }
+
+  #beer-name {
+    float: left;
+    padding-left: 20px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
+  }
+  #beer-price {
+    float: right;
+    padding-right: 10px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
+  }
+
+  .screen {
+    height: 300px;
+    width: 700px;
+  }
+  #popup_content {
+    width: 42%;
+    height: auto;
+    margin-left: 29%;
+    margin-top: 10%;
+    padding-bottom: 5%;
+  }
+
+  /* beer style */
+  .boxtap {
+    margin-top: 45px;
+    width: 88px;
+    height: auto;
+  }
+
+  .working {
+    right: 27%;
   }
 
   /*table style */
 
   .chairs {
-    margin-left: 100px;
+    margin-left: 60px;
   }
 
   .chair1,
   .chair2,
   .chair3 {
-    width: 230px;
+    width: 135px;
   }
 
   .chair2 {
-    margin-left: 350px;
+    margin-left: 220px;
   }
 
   .chair3 {
-    margin-left: 680px;
+    margin-left: 420px;
+  }
+}
+
+@media screen and (min-width: 1750px) {
+  .working {
+    right: 28%;
+  }
+
+  /* table */
+
+  #getNumber {
+    width: 19%;
   }
 }
