@@ -33,16 +33,16 @@ let NewqueueNr;
 function update() {
   data = JSON.parse(FooBar.getData());
 
-  beers(FooBarData.beertypes);
+  // beers(FooBarData.beertypes);
   taps(data.taps);
   // find where lastQueueId is in the queue at update
   indexNr = data.queue.map(e => e.id).indexOf(lastQueueId);
-  console.log(data);
-  console.log("i am indexNr" + indexNr);
+  //  console.log(data);
+  //console.log("i am indexNr" + indexNr);
   // display new number in line  // loop
   if (indexNr < queueNr) {
     NewqueueNr = indexNr + 1;
-    console.log("i am newQueueNr" + NewqueueNr);
+    // console.log("i am newQueueNr" + NewqueueNr);
     document.getElementById("your_number").textContent = NewqueueNr;
   }
   if (NewqueueNr <= 0) {
@@ -72,12 +72,12 @@ function showBartenders(handleBartenders) {
   });
 }
 
-  // FUNCTION BEERS - Marie D
+// FUNCTION BEERS - Marie D
 
 beers();
 
 function beers() {
-  console.log("show beers");
+  // console.log("show beers");
   let beerTypes = data.beertypes;
 
   let temp = document.querySelector("[data-template]");
@@ -112,7 +112,7 @@ function beers() {
 
 function visModal(showBeer) {
   document.querySelector("#popup").style.opacity = "1";
-  document.querySelector("#popup").style.pointerEvents = "auto";
+  document.querySelector("[data-override]").style.pointerEvents = "auto";
   document.querySelector("[data-name2]").textContent = showBeer.name;
   document
     .querySelector("[data-singleImg]")
@@ -121,11 +121,11 @@ function visModal(showBeer) {
     showBeer.discription;
   document.querySelector("[data-pris]").textContent = showBeer.alc + ",- kr";
   document.querySelector("[data-button]").addEventListener("click", closeModal);
-  console.log("pop-up klikket");
-  
-  
+  // console.log("pop-up klikket");
+}
+
 function closeModal() {
-  console.log("luk modal funktion");
+  // console.log("luk modal funktion");
   document.querySelector("#popup").style.pointerEvents = "none";
   document.querySelector("#popup").style.opacity = "0";
 }
@@ -140,7 +140,7 @@ function single(singleBeer) {
       return false;
     }
   }
-} */
+ */
 
 // FUNCTION TAPS
 const templateTaps = document.querySelector(".templateTap").content;
@@ -217,7 +217,7 @@ function getNumber() {
 
   //find last index id
   lastQueueIndex = data.queue.length - 1;
-  console.log("i am last queue id " + data.queue[lastQueueIndex].id);
+  //console.log("i am last queue id " + data.queue[lastQueueIndex].id);
   lastQueueId = data.queue[lastQueueIndex].id;
 
   //console.log("I am first Id " + firstQueueId);
