@@ -11,6 +11,25 @@
 </head>
 
 <body>
+    <!-- dette er modalvinduet -->
+    <div id="popup" data-override>
+        <div id="popup_content">
+            <button class="knap" data-button>
+                <div class="bar4"></div>
+                <div class="bar5"></div>
+            </button>
+            <h1 class="single_name" data-name2></h1>
+            <div class="single_info">
+                <img src="" alt="" class="single_img" data-singleImg>
+                <details class="beskrivelse" open>
+                    <summary></summary>
+                    <p data-discription></p>
+                    <p class="popup_pris" data-pris></p>
+                </details>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Mary section -->
     <section data-wall id="wall">
@@ -22,82 +41,16 @@
                 <div data-destination></div>
                 <template data-template>
                     <div class="columns">
-                        <div class="object">
+                        <div class="object" data-window>
                             <img data-beer-img id="beer-img" src="">
                             <p data-name id="beer-name"></p>
                             <p data-price id="beer-price"></p>
                         </div>
                     </div>
-                    <!-- <div class="object">
-                                    <img data-beerimg id="beer-img" src="">
-                                    <p data-name id="beer-name"></p>
-                                    <p data-price id="beer-price"></p>
-                                    </div> 
-                                    <div class="object">
-                                        <img data-beerimg id="beer-img" src="">
-                                        <p data-name id="beer-name"></p>
-                                        <p data-price id="beer-price"></p>
-                                    </div>
-                                    <div class="object">
-                                        <img data-beerimg id="beer-img" src="">
-                                        <p data-name id="beer-name"></p>
-                                        <p data-price id="beer-price"></p>
-                                    </div>
-                                    <div class="object">
-                                        <img data-beerimg id="beer-img" src="">
-                                        <p data-name id="beer-name"></p>
-                                        <p data-price id="beer-price"></p>
-                                    </div>
-                                    </div>
-                                    <div class="columns">
-                                    <div class="object">
-                                        <img data-beerimg id="beer-img" src="">
-                                        <p data-name id="beer-name"></p>
-                                        <p data-price id="beer-price"></p>
-                                    </div>
-                                    <div class="object">
-                                        <img data-beerimg id="beer-img" src="">
-                                        <p data-name id="beer-name"></p>
-                                        <p data-price id="beer-price"></p>
-                                    </div>
-                                    <div class="object">
-                                        <img data-beerimg id="beer-img" src="">
-                                        <p data-name id="beer-name"></p>
-                                        <p data-price id="beer-price"></p>
-                                    </div>
-                                    <div class="object">
-                                        <img data-beerimg id="beer-img" src="">
-                                        <p data-name id="beer-name"></p>
-                                        <p data-price id="beer-price"></p>
-                                    </div>
-                                    <div class="object">
-                                        <img data-beerimg id="beer-img" src="">
-                                        <p data-name id="beer-name"></p>
-                                        <p data-price id="beer-price"></p>
-                                    </div>  -->
-            </div>
-        </div>
-        </template>
-    </section>
-
-    <section id="modal_container" class="hidden">
-        <div id="modal_window">
-            <span id="closebutton">X</span>
-            <div class="screen-wrap">
-                <div data-destModal></div>
-                <template data-temp>
-                    <div class="modal_column">
-                        <img data-beer-img2 id="beer-img" src="">
-                        <p data-name2 id="beer-name"></p>
-                        <p data-price2 id="beer-price"></p>
-                        <p data-alc id="beer-price"></p>
-                    </div>
-                    <div class="modal_column">
-                        <p data-description id="beer-name"></p>
-                    </div>
                 </template>
             </div>
         </div>
+
     </section>
 
 

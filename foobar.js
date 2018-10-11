@@ -18,9 +18,13 @@ function init() {
 }
 //FUNCTION UPDATE, updates what was created in the previous function
 let data = JSON.parse(FooBar.getData());
+
 function update() {
+  data = JSON.parse(FooBar.getData());
+
   handleBartenders(FooBarData.bartenders);
-  beers(FooBarData.beertypes);
+  beers(data.beertypes);
+
   //taps(FooBarData.taps);
 }
 
@@ -35,89 +39,69 @@ function handleBartenders(bartenders) {
 // FUNCTION BEERS - Marie D
 
 beers();
-// FUNCTION BEERS - Marie D
+
 function beers() {
-  //console.log(beers);
-  // find beer names, labels and alcohol%
-  // display labels, names and price
+  console.log("show beers");
   let beerTypes = data.beertypes;
-  console.log(beerTypes);
 
   let temp = document.querySelector("[data-template]");
   let dest = document.querySelector("[data-destination]");
-
   dest.innerHTML = "";
 
-  beerTypes.forEach(beer => {
+  document.querySelector("#popup").style.pointerEvents = "none";
+
+  //loop som kloner template
+  beerTypes.forEach(showBeer => {
     let klon = temp.cloneNode(true).content;
     klon
       .querySelector("[data-beer-img]")
-      .setAttribute("src", "images" + "/" + beer.label);
-    klon.querySelector("[data-name]").textContent = beer.name;
-    klon.querySelector("[data-price]").textContent = beer.alc * 10;
-
-    //klon.querySelector(".ret ").addEventListener("click ", openModal);
-
+      .setAttribute("src", "images" + "/" + showBeer.label);
+    klon.querySelector("[data-name]").textContent = showBeer.name;
+    klon.querySelector("[data-price]").textContent =
+      showBeer.alc * 10 + ",- kr";
+    klon.querySelector("[data-window]").addEventListener("click", () => {
+      visModal(showBeer);
+    });
     dest.appendChild(klon);
   });
-  // calculate price from alcohol%
-}
-
-// Modal Window - Marie D
-
-// Make Modal pop up and close
-const modal = document.querySelector("#modal_container");
-const closeButton = document.querySelector("#closebutton");
-
-document.querySelector(".columns").addEventListener("click", showModal);
-
-function showModal(window) {
-  console.log("Show modal");
-  modal.classList.remove("hidden");
-}
-
-closeButton.addEventListener("click", hideModal);
-
-function hideModal() {
-  console.log("Hide modal");
-  modal.classList.add("hidden");
-}
-
-// Make showModal show JSON data beertypes
-
-showInModal();
-
-function showInModal() {
-  let modalInfo = data.beertypes;
-  console.log(modalInfo);
-
-  let tempModal = document.querySelector("[data-temp]");
-  let destModal = document.querySelector("[data-destModal]");
-
-  destModal.innerHTML = "";
-
-  modalInfo.forEach(beer => {
-    let klon = tempModal.cloneNode(true).content;
-    klon
-      .querySelector("[data-beer-img2]")
-      .setAttribute("src", "images" + "/" + beer.label);
-    klon.querySelector("[data-name2]").textContent = beer.name;
-    klon.querySelector("[data-price2]").textContent = beer.alc * 10;
-    klon.querySelector("[data-alc]").textContent = beer.alc;
-    klon.querySelector("[data-description]").textContent = beer.description;
-
-    //klon.querySelector(".ret ").addEventListener("click ", openModal);
-
-    destModal.appendChild(klon);
+  //fade-in på article
+  document.querySelectorAll("article").forEach(a => {
+    a.getBoundingClientRect(); // kun hvis det ikke virker uden
+    a.style.transition = "all 1s";
+    a.style.opacity = "1";
   });
 }
 
-// Make show a single beer
+// Make a popup and close modal
 
+function visModal(showBeer) {
+  document.querySelector("#popup").style.opacity = "1";
+  document.querySelector("#popup").style.pointerEvents = "auto";
+  document.querySelector("[data-name2]").textContent = showBeer.name;
+  document
+    .querySelector("[data-singleImg]")
+    .setAttribute("src", "images" + "/" + showBeer.label);
+  document.querySelector("[data-discription]").textContent =
+    showBeer.discription;
+  document.querySelector("[data-pris]").textContent = showBeer.alc + ",- kr";
+  document.querySelector("[data-button]").addEventListener("click", closeModal);
+  console.log("pop-up klikket");
+}
+
+function closeModal() {
+  console.log("luk modal funktion");
+  document.querySelector("#popup").style.pointerEvents = "none";
+  document.querySelector("#popup").style.opacity = "0";
+}
+
+// Make a show single column
+/* 
 function single(singleBeer) {
   console.log(singleBeer);
   for (let i = 0; i < data.length; i++) {
     if (currentBeer.name == beertypes[i].name) {
+    } else {
+      return false;
     }
   }
-}
+} */

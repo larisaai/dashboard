@@ -104,41 +104,83 @@ body {
   border-radius: 10px;
 }
 /* modal window style */
-
-#modal_container {
-  display: block;
-  width: 600px;
-  max-width: 100%;
-  height: 400px;
-  max-height: 100%;
+#popup {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
   position: fixed;
-  z-index: 100;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  z-index: 1000;
+  opacity: 0;
+  transition: 1s;
+}
+
+#popup_content {
+  width: 50%;
+  height: 50%;
+  position: fixed;
+  /* overflow: scroll; */
+  margin-left: 25%;
+  margin-top: 10%;
   background: white;
-  box-shadow: 0 0 60px 10px rgba(0, 0, 0, 1);
+  pointer-events: none;
 }
 
-#modal_window {
-  /*max-width: 80vw;*/
-  width: 40vw;
-}
-.modal_column {
-  width: 100%;
+.beskrivelse {
+  background-color: none;
   height: auto;
-  margin: auto;
-}
-#modal_img {
-  width: 100px;
-  height: 100px;
-}
-.hidden {
-  visibility: hidden;
+  margin-top: 5%;
+  padding: 5%;
 }
 
-#closebutton {
-  cursor: pointer;
+.single_name {
+  background-color: none;
+  max-width: 93.6vw;
+  margin: 0;
+  margin-bottom: 2vh;
+  color: white;
+}
+.single_info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.single_img {
+  width: 50%;
+}
+.closebutton {
+  pointer-events: auto;
+}
+
+[main-title] {
+  /* override pointer-events: none set by app-toolbar */
+  pointer-events: auto;
+  /* set margin-right so title won't be on top of the 2 buttons on the right */
+  margin-right: 100px;
+}
+
+/* knap til lukning af modalvindue */
+
+.bar4 {
+  transform: rotate(-45deg) translate(-7px, 4px);
+  background-color: #f3c93f;
+  border-style: solid;
+  border-color: #f3c93f;
+}
+
+.bar5 {
+  transform: rotate(45deg) translate(-7px, -5px);
+  background-color: #f3c93f;
+  border-style: solid;
+  border-color: #f3c93f;
+}
+
+.knap {
+  background-color: rgba(0, 0, 0, 0);
+  height: 35px;
+  width: 35px;
+  border-style: none;
+  margin: 6px;
+  left: 100px;
+  padding: 0;
 }
 
 /* beer style */
@@ -394,8 +436,13 @@ body {
   }
 
   .screen-wrap {
+    /*  display: grid;
+    grid-template-columns: 50% 50%; */
+  }
+
+  [data-destination] {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
   }
 
   .columns {
@@ -478,15 +525,16 @@ body {
     padding-left: 10px;
   }
 
-  .screen-wrap {
+  [data-destination] {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
   }
 
   .columns {
-    width: 100%;
-    display: block;
+    /* width: 100%;
+    display: block;*/
   }
+
   #beer-img {
     width: 32px;
     height: 32px;
