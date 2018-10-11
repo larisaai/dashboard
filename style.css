@@ -1,7 +1,6 @@
 body {
   margin: 0px;
-  background-color: #B1AEAD;
-
+  background-color: #b1aead;
 }
 
 /* mobile version */
@@ -10,19 +9,17 @@ body {
 #wall {
   width: 100vw;
   height: 44vh;
-  background-color: #B1AEAD;
+  background-color: #b1aead;
   position: relative;
 }
 
 #logo {
-
   margin: 20px;
   width: 90px;
   height: 90px;
   display: block;
   margin: auto;
   border: 1px solid black;
-
 }
 
 .screen {
@@ -32,16 +29,15 @@ body {
   display: block;
   margin: auto;
   margin-top: 20px;
-
 }
 
 /* beer style */
 #beer {
   position: relative;
   background-color: #E2DAC2;
+
   width: 100vw;
   height: 36vh;
-
 }
 
 #scrollicon {
@@ -138,16 +134,18 @@ rect.cls-2 {
   bottom: -1px;
 }
 
+
 .undertap {
   background-color: #5B5A59;
+
   height: 15px;
 }
 
 .underbeer {
-
   width: 100vw;
   height: 30px;
   background-image: linear-gradient(#5B5A59, #808080);
+
   opacity: 0.9;
 }
 
@@ -165,7 +163,6 @@ rect.cls-2 {
   height: 15vh;
   background-image: linear-gradient(black, #808080);
   opacity: 0.4;
-
 }
 
 .chair1,
@@ -182,8 +179,30 @@ rect.cls-2 {
   display: none;
 }
 
+#getNumber {
+  position: absolute;
+  bottom: 0px;
+  right: 3%;
+  width: 53%;
+}
+#getNumber svg {
+  bottom: 0px;
+  position: absolute;
+}
+#your_number {
+  display: block;
+  margin: auto;
+  bottom: 16%;
+  right: 7%;
+  width: 40%;
+  font-size: 1.3em;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
+}
+foreignObject {
+  font-size: 6em;
+}
 @media screen and (min-width: 500px) {
-
   /* wall style */
   #wall {
     height: 42vh;
@@ -196,11 +215,9 @@ rect.cls-2 {
   }
 
   #logo {
-
     width: 100px;
     height: 100px;
     margin: auto;
-
   }
 
   .screen {
@@ -209,13 +226,13 @@ rect.cls-2 {
     border: 3px solid black;
     display: block;
     margin: auto;
-
   }
 
   /* beer style */
   #beer {
     height: 38vh;
   }
+
 
   #scrollicon {
     display: none;
@@ -225,10 +242,12 @@ rect.cls-2 {
     width: 90vw;
   }
 
+
   .underbeer {
     height: 5vh;
   }
 
+  /* table style (min 500px) */
   .chair1,
   .chair2 {
     display: block;
@@ -238,6 +257,18 @@ rect.cls-2 {
 
   .chair2 {
     margin-left: 160px;
+  }
+    #getNumber {
+    width: 44%;
+  }
+  #your_number {
+    width: 34%;
+    bottom: 18%;
+    font-size: 1.8em;
+  }
+
+  foreignObject {
+    font-size: 5em;
   }
 }
 
@@ -252,8 +283,14 @@ rect.cls-2 {
 }
 
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 650px) {
+  /* table */
+  #getNumber {
+    width: 35%;
+  }
+}
 
+@media screen and (min-width: 800px) {
   /* wall style */
   #logo {
     width: 150px;
@@ -266,7 +303,6 @@ rect.cls-2 {
     border: 3px solid black;
     display: block;
     margin: auto;
-
   }
 
   /* beer style */
@@ -329,11 +365,19 @@ rect.cls-2 {
   .chair3 {
     margin-left: 340px;
   }
+
+  #getNumber {
+    width: 30%;
+  }
+  #your_number {
+    width: 25%;
+    bottom: 14%;
+    font-size: 2em;
+  }
 }
 
 /* tablet version */
 @media screen and (min-width: 1024px) {
-
   /* wall style */
 
   #wall {
@@ -356,7 +400,6 @@ rect.cls-2 {
     border: 3px solid black;
     display: block;
     margin: auto;
-
   }
 
   /* beer style */
@@ -395,6 +438,16 @@ rect.cls-2 {
     margin-left: 380px;
   }
 
+  #getNumber {
+    width: 25%;
+    right: 3%;
+  }
+  #your_number {
+    width: 21%;
+    bottom: 20%;
+    font-size: 2.1em;
+    right: 7%;
+  }
 }
 
 /* 
@@ -404,9 +457,7 @@ rect.cls-2 {
   }
 } */
 
-
 @media screen and (min-width: 1200px) {
-
   /* wall style */
   #logo {
     width: 170px;
@@ -418,6 +469,7 @@ rect.cls-2 {
     width: 600px;
   }
 
+
   /* beer style */
   .beersContainer {
     width: 60vw;
@@ -427,21 +479,24 @@ rect.cls-2 {
     right: 20%;
   }
 
+  /* table */
+  #getNumber {
+    width: 20%;
+  }
 }
 
 @media screen and (min-width: 1550px) {
-
   /* wall style */
   #logo {
     width: 150px;
     height: 150px;
   }
 
-
   .screen {
+
     height: 300px;
     width: 700px;
-    ;
+
   }
 
   /* beer style */
@@ -479,5 +534,11 @@ rect.cls-2 {
 @media screen and (min-width: 1750px) {
   .working {
     right: 100%;
+  }
+
+  /* table */
+
+  #getNumber {
+    width: 19%;
   }
 }

@@ -2,8 +2,14 @@
 
 window.addEventListener("DOMContentLoaded", init);
 
-// addEventListener on press numberbuttom, call function getNumber
+window.onload = function() {
+  let numberText = document.querySelector("#getNumber #number_text");
+  let itIsYourTurn = document.querySelector("#getNumber #it_is_your_turn");
+  numberText.style.visibility = "hidden";
+  itIsYourTurn.style.visibility = "hidden";
+};
 
+// addEventListener on press numberbuttom, call function getNumber
 // get data
 const FooBarObject = FooBar.getData(); // data is a string
 // convert data to json
@@ -11,24 +17,32 @@ let FooBarData = JSON.parse(FooBarObject); //take this string and turn it into j
 
 //FUNCTION INIT, template, cloning, setup things that happens once
 function init() {
+
   console.log(FooBarData);
   setupTaps(FooBarData.taps);
   showBartenders(FooBarData.bartenders);
+
   //setInteval
 
   setInterval(update, 1500);
 }
-//FUNCTION UPDATE, updates what was created in the previous function
+
 let data = JSON.parse(FooBar.getData());
 
+let firstQueueId;
+let lastQueueId;
+let indexNr;
+
+//FUNCTION UPDATE, updates what was created in the previous function
 function update() {
   data = JSON.parse(FooBar.getData());
-  FooBarData = JSON.parse(FooBar.getData()); //take this string and turn it into json
-
-
+ 
   beers(FooBarData.beertypes);
   taps(FooBarData.taps);
 
+  // find where lastQueueId is in the queue at update
+  indexNr = data.queue.map(e => e.id).indexOf(lastQueueId);
+  console.log(indexNr);
 }
 
 //FUNCTION HANDLEBARTENDERS
@@ -104,34 +118,60 @@ function taps(taps) {
   })
 
 }
-// FUNCTION DISPLAYNUMBER
-function displayNumber() {
-  // start animation "number comming out of machine"
-  // get data from the function getNumber and display on the ticket
+  
+getNumberMachine();
+
+// FUNCTION GETNUMBERMACHINE
+async function getNumberMachine() {
+  //load svg
+  let numberSvg = await fetch("svg/numbermachine5.svg");
+  // interpretate svg as text
+  let svg = await numberSvg.text();
+  // put svg in html
+  document.querySelector("#getNumber").innerHTML = svg;
+  document.querySelector("#button").addEventListener("click", hideShowText);
+
 }
-getNumber();
-// FUNCTION GETNUMBER
+// FUNCTION hideShowText
+// hide the text on the numbermachine
+function hideShowText() {
+  let text = document.querySelector("#getNumber #order_text");
+  text.style.visibility = "hidden";
+
+  // show text on number
+  let numberText = document.querySelector("#getNumber #number_text");
+  numberText.style.visibility = "visible";
+
+  getNumber();
+}
+let queueNr;
+let lastQueueIndex;
+// FUNCTION GETNUMBER // print your number on the screen and counts down every time a customer is served
 function getNumber() {
-  // generete a consecutively number that will a one everytime numberbutton is pushed
-  let startNumber = 1;
+  // find first index of queue id
+  firstQueueId = data.queue[0].id;
+
+  //find last index id
+  lastQueueIndex = data.queue.length - 1;
+  console.log("i am last queue id " + data.queue[lastQueueIndex].id);
+  lastQueueId = data.queue[lastQueueIndex].id;
+
+  //console.log("I am first Id " + firstQueueId);
 
   // calculate what number in line the customer is (length +1)
-  console.log(`You are number ${FooBarData.queue.length + 1} in line`);
-  let queueNr = FooBarData.queue.length + 1;
-  // find template and destination
-  let temp = document.querySelector("[data-number-template]");
-  let dest = document.querySelector("[data-number-destination]");
-  // set destination to innerHTML
-  dest.innerHTML = "";
 
-  // ?? do I need to clone??
-  let clone = temp.cloneNode(true).content;
-  document.querySelector("[data-number]").textContent = queueNr;
-  document.querySelector("[data-number-template]").appendChild(clone);
-  console.log(queueNr);
+  queueNr = data.queue.length + 1;
+  console.log("you are nr " + queueNr);
 
-  // HTML
-  //<div data-number-destination></div>
-  //<div data-number-template>
-  //    <p> </p>
+  // display your number on screen
+  document.getElementById("your_number").textContent = queueNr;
+  countdown();
+}
+
+function countdown() {
+  console.log("countdown");
+  console.log(indexNr + 1);
+  // loop
+
+  // indexNr +1
 }
