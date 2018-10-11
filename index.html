@@ -11,13 +11,48 @@
 </head>
 
 <body>
+    <!-- dette er modalvinduet -->
+    <div id="popup" data-override>
+        <div id="popup_content">
+            <button class="knap" data-button>
+                <div class="bar4"></div>
+                <div class="bar5"></div>
+            </button>
+            <h1 class="single_name" data-name2></h1>
+            <div class="single_info">
+                <img src="" alt="" class="single_img" data-singleImg>
+                <details class="beskrivelse" open>
+                    <summary></summary>
+                    <p data-discription></p>
+                    <p class="popup_pris" data-pris></p>
+                </details>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Mary section -->
     <section data-wall id="wall">
-        <div class="item-a"> <img id="logo" src="" alt="logo"></div>
-        <div class="screen item-b"></div>
+        <div class="item-a"> <img id="logo" src="svg/Foobar.svg" alt="logo"></div>
+        <div class="screen item-b">
+            <h1>Menu</h1>
+            <div class="screen-wrap">
+                <!-- first column -->
+                <div data-destination></div>
+                <template data-template>
+                    <div class="columns">
+                        <div class="object" data-window>
+                            <img data-beer-img id="beer-img" src="">
+                            <p data-name id="beer-name"></p>
+                            <p data-price id="beer-price"></p>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
 
     </section>
+
 
     <!-- Larisa section -->
     <section data-beers id="beer">

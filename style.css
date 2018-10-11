@@ -2,6 +2,9 @@ body {
   margin: 0px;
   background-color: #b1aead;
 }
+/* .item-a {
+  display: none;
+} */
 
 /* mobile version */
 
@@ -15,25 +18,177 @@ body {
 
 #logo {
   margin: 20px;
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
   display: block;
-  margin: auto;
-  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 3px solid #5b5a58;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
 }
+/* screen style*/
 
 .screen {
   width: 220px;
-  height: 150px;
-  border: 3px solid black;
+  height: 198px;
+  background: #5b5a58;
+  border: 8px solid black;
   display: block;
   margin: auto;
-  margin-top: 20px;
+  overflow-x: scroll;
+  white-space: nowrap;
+  position: relative;
+}
+
+.screen:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.screen-wrap {
+  width: 100%;
+  display: inline-block;
+}
+.screen h1 {
+  text-align: left;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  color: #fff;
+  font-weight: 100;
+  text-decoration: underline;
+}
+.columns {
+  width: 100%;
+  display: block;
+}
+
+.object {
+  width: 100%;
+  display: block;
+  float: none;
+  clear: left;
+}
+
+#beer-img {
+  width: 25px;
+  height: 25px;
+  float: left;
+  background: blue;
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+
+#beer-name {
+  float: left;
+  padding-left: 20px;
+  line-height: 0.4em;
+  margin-bottom: 1px;
+  position: relative;
+  top: -6px;
+  color: #fff;
+}
+#beer-price {
+  float: right;
+  margin-right: 10px;
+  margin-bottom: 1px;
+  line-height: 0.3em;
+  position: relative;
+  top: -10px;
+  padding: 0.25em;
+  background: #f0c747;
+  border-radius: 10px;
+}
+/* modal window style */
+#popup {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  z-index: 1000;
+  opacity: 0;
+  transition: 1s;
+}
+
+#popup_content {
+  width: 50%;
+  height: 50%;
+  position: fixed;
+  /* overflow: scroll; */
+  margin-left: 25%;
+  margin-top: 10%;
+  background: white;
+  pointer-events: none;
+}
+
+.beskrivelse {
+  background-color: none;
+  height: auto;
+  margin-top: 5%;
+  padding: 5%;
+}
+
+.single_name {
+  background-color: none;
+  max-width: 93.6vw;
+  margin: 0;
+  margin-bottom: 2vh;
+  color: white;
+}
+.single_info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.single_img {
+  width: 50%;
+}
+.closebutton {
+  pointer-events: auto;
+}
+
+[main-title] {
+  /* override pointer-events: none set by app-toolbar */
+  pointer-events: auto;
+  /* set margin-right so title won't be on top of the 2 buttons on the right */
+  margin-right: 100px;
+}
+
+/* knap til lukning af modalvindue */
+
+.bar4 {
+  transform: rotate(-45deg) translate(-7px, 4px);
+  background-color: #f3c93f;
+  border-style: solid;
+  border-color: #f3c93f;
+}
+
+.bar5 {
+  transform: rotate(45deg) translate(-7px, -5px);
+  background-color: #f3c93f;
+  border-style: solid;
+  border-color: #f3c93f;
+}
+
+.knap {
+  background-color: rgba(0, 0, 0, 0);
+  height: 35px;
+  width: 35px;
+  border-style: none;
+  margin: 6px;
+  left: 100px;
+  padding: 0;
+
 }
 
 /* beer style */
 #beer {
   position: relative;
+
   background-color: #e2dac2;
 
   width: 100vw;
@@ -123,9 +278,9 @@ rect.cls-2 {
   bottom: -1px;
 }
 
+
 .undertap {
   background-color: #5b5a59;
-
   height: 15px;
 }
 
@@ -133,7 +288,6 @@ rect.cls-2 {
   width: 100vw;
   height: 30px;
   background-image: linear-gradient(#5b5a59, #808080);
-
   opacity: 0.9;
 }
 
@@ -194,6 +348,7 @@ rect.cls-2 {
 foreignObject {
   font-size: 6em;
 }
+
 @media screen and (min-width: 500px) {
   /* wall style */
   #wall {
@@ -212,12 +367,50 @@ foreignObject {
     margin: auto;
   }
 
+  /* wall screen style */
   .screen {
-    width: 300px;
-    height: 200px;
-    border: 3px solid black;
+    width: 373px;
+    height: 201px;
+  }
+  .screen h1 {
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+  }
+  .columns {
+    width: 100%;
+    display: inline-block;
+  }
+
+  .object {
+    width: 100%;
     display: block;
-    margin: auto;
+    float: none;
+    clear: left;
+  }
+  #beer-img {
+    width: 25px;
+    height: 25px;
+    float: left;
+    background: blue;
+    margin-bottom: 5px;
+    margin-left: 10px;
+  }
+
+  #beer-name {
+    float: left;
+    padding-left: 20px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
+  }
+  #beer-price {
+    float: right;
+    padding-right: 10px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
+    padding: 0.2em;
+
   }
 
   /* beer style */
@@ -248,6 +441,7 @@ foreignObject {
   .chair2 {
     margin-left: 160px;
   }
+
   #getNumber {
     width: 37%;
   }
@@ -286,12 +480,29 @@ foreignObject {
     height: 150px;
   }
 
+  /* wall screen style */
+
   .screen {
     width: 450px;
-    height: 200px;
-    border: 3px solid black;
+    height: 241px;
+    border: 8px solid black;
     display: block;
     margin: auto;
+
+    overflow-x: scroll;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .screen h1 {
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+  }
+  .columns {
+    width: 100%;
+    display: inline-block;
   }
 
   /* beer style */
@@ -337,6 +548,33 @@ foreignObject {
     margin-top: -20px;
   }
 
+  .object {
+    width: 100%;
+    display: block;
+    float: none;
+    clear: left;
+  }
+  #beer-img {
+    width: 35px;
+    height: 35px;
+    float: left;
+    background: blue;
+    margin-bottom: 4px;
+    margin-left: 10px;
+  }
+
+  #beer-name {
+    float: left;
+    padding-left: 20px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
+  }
+  #beer-price {
+    float: right;
+    padding-right: 10px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
+  }
   /* table style */
   .chair1,
   .chair2,
@@ -382,12 +620,60 @@ foreignObject {
     height: 150px;
   }
 
+  /* wall screen style */
+
   .screen {
     width: 500px;
-    height: 200px;
-    border: 3px solid black;
+    height: 227px;
+    border: 8px solid black;
     display: block;
     margin: auto;
+    overflow-x: scroll;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .screen h1 {
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+  }
+
+  .screen-wrap {
+    /*  display: grid;
+    grid-template-columns: 50% 50%; */
+  }
+
+  [data-destination] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .columns {
+    width: 100%;
+  }
+  #beer-img {
+    width: 30px;
+    height: 30px;
+    float: left;
+    background: blue;
+    margin-bottom: 6px;
+    margin-left: 10px;
+  }
+
+  #beer-name {
+    float: left;
+    padding-left: 20px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
+  }
+  #beer-price {
+    float: right;
+    padding-right: 10px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
+
   }
 
   /* beer style */
@@ -421,6 +707,7 @@ foreignObject {
     margin-left: 380px;
   }
 
+
   #getNumber {
     width: 20%;
     right: 1%;
@@ -447,11 +734,56 @@ foreignObject {
     height: 170px;
   }
 
+  /* wall screen style */
+
   .screen {
     height: 230px;
     width: 600px;
+    display: block;
+    margin: auto;
+    overflow-x: scroll;
+    white-space: nowrap;
+    position: relative;
   }
 
+  .screen h1 {
+    text-align: left;
+    margin-top: 7px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+  }
+
+  [data-destination] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .columns {
+    /* width: 100%;
+    display: block;*/
+  }
+
+  #beer-img {
+    width: 32px;
+    height: 32px;
+    float: left;
+    background: blue;
+    margin-bottom: 5px;
+    margin-left: 10px;
+  }
+
+  #beer-name {
+    float: left;
+    padding-left: 20px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
+  }
+  #beer-price {
+    float: right;
+    padding-right: 10px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
+    
   /* beer style */
   .beersContainer {
     width: 60vw;
@@ -465,6 +797,7 @@ foreignObject {
   #getNumber {
     width: 19%;
     right: 1%;
+
   }
 }
 
@@ -475,6 +808,53 @@ foreignObject {
     height: 150px;
   }
 
+  /* wall screen style */
+
+  .screen {
+    height: 400px;
+    width: 900px;
+    display: block;
+    margin: auto;
+    overflow-x: scroll;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .screen h1 {
+    text-align: left;
+    margin-top: 5px;
+    padding-left: 20px;
+  }
+  .screen-wrap {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .columns {
+    width: 100%;
+  }
+  #beer-img {
+    width: 40px;
+    height: 40px;
+    float: left;
+    background: blue;
+    margin-bottom: 5px;
+    margin-left: 10px;
+  }
+
+  #beer-name {
+    float: left;
+    padding-left: 20px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
+  }
+  #beer-price {
+    float: right;
+    padding-right: 10px;
+    line-height: 0.4em;
+    margin-bottom: 1px;
+  }
+  
   .screen {
     height: 300px;
     width: 700px;
@@ -489,6 +869,7 @@ foreignObject {
 
   .working {
     right: 27%;
+
   }
 
   /*table style */
