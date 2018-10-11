@@ -28,12 +28,11 @@ body {
   border: 3px solid #5b5a58;
   padding-top: 10px;
   padding-bottom: 10px;
-
 }
 /* screen style*/
 
 .screen {
-  width: 220px;
+  width: 260px;
   height: 198px;
   background: #5b5a58;
   border: 8px solid black;
@@ -50,10 +49,10 @@ body {
   clear: both;
 }
 
-.screen-wrap {
+/* .screen-wrap {
   width: 100%;
   display: inline-block;
-}
+} */
 .screen h1 {
   text-align: left;
   margin-top: 5px;
@@ -123,7 +122,7 @@ body {
   margin-left: 25%;
   margin-top: 10%;
   background: white;
-  pointer-events: none;
+  /*pointer-events: none;*/
 }
 
 .beskrivelse {
@@ -182,7 +181,6 @@ body {
   margin: 6px;
   left: 100px;
   padding: 0;
-
 }
 
 /* beer style */
@@ -277,7 +275,6 @@ rect.cls-2 {
   position: absolute;
   bottom: -1px;
 }
-
 
 .undertap {
   background-color: #5b5a59;
@@ -380,7 +377,7 @@ foreignObject {
   }
   .columns {
     width: 100%;
-    display: inline-block;
+    display: block;
   }
 
   .object {
@@ -410,7 +407,6 @@ foreignObject {
     line-height: 0.4em;
     margin-bottom: 1px;
     padding: 0.2em;
-
   }
 
   /* beer style */
@@ -502,7 +498,7 @@ foreignObject {
   }
   .columns {
     width: 100%;
-    display: inline-block;
+    display: block;
   }
 
   /* beer style */
@@ -640,10 +636,10 @@ foreignObject {
     padding-left: 10px;
   }
 
-  .screen-wrap {
-    /*  display: grid;
-    grid-template-columns: 50% 50%; */
-  }
+  /*   .screen-wrap {
+    display: grid;
+    grid-template-columns: 50% 50%; 
+  } */
 
   [data-destination] {
     display: grid;
@@ -673,7 +669,6 @@ foreignObject {
     padding-right: 10px;
     line-height: 0.4em;
     margin-bottom: 1px;
-
   }
 
   /* beer style */
@@ -706,7 +701,6 @@ foreignObject {
   .chair3 {
     margin-left: 380px;
   }
-
 
   #getNumber {
     width: 20%;
@@ -758,10 +752,10 @@ foreignObject {
     grid-template-columns: 1fr 1fr;
   }
 
-  .columns {
-    /* width: 100%;
-    display: block;*/
-  }
+  /* .columns {
+     width: 100%;
+    display: block;
+  }*/
 
   #beer-img {
     width: 32px;
@@ -783,7 +777,8 @@ foreignObject {
     padding-right: 10px;
     line-height: 0.4em;
     margin-bottom: 1px;
-    
+  }
+
   /* beer style */
   .beersContainer {
     width: 60vw;
@@ -797,7 +792,6 @@ foreignObject {
   #getNumber {
     width: 19%;
     right: 1%;
-
   }
 }
 
@@ -825,10 +819,10 @@ foreignObject {
     margin-top: 5px;
     padding-left: 20px;
   }
-  .screen-wrap {
+  /*   .screen-wrap {
     display: grid;
     grid-template-columns: 50% 50%;
-  }
+  } */
 
   .columns {
     width: 100%;
@@ -854,7 +848,7 @@ foreignObject {
     line-height: 0.4em;
     margin-bottom: 1px;
   }
-  
+
   .screen {
     height: 300px;
     width: 700px;
@@ -869,7 +863,6 @@ foreignObject {
 
   .working {
     right: 27%;
-
   }
 
   /*table style */
