@@ -1,4 +1,5 @@
 "use strict";
+
 window.addEventListener("DOMContentLoaded", init);
 
 window.onload = function() {
