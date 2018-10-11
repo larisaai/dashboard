@@ -7,48 +7,103 @@ window.addEventListener("DOMContentLoaded", init);
 // get data
 const FooBarObject = FooBar.getData(); // data is a string
 // convert data to json
-const FooBarData = JSON.parse(FooBarObject); //take this string and turn it into json
+let FooBarData = JSON.parse(FooBarObject); //take this string and turn it into json
 
 //FUNCTION INIT, template, cloning, setup things that happens once
 function init() {
   console.log(FooBarData);
-
+  setupTaps(FooBarData.taps);
+  showBartenders(FooBarData.bartenders);
   //setInteval
+
   setInterval(update, 1500);
 }
 //FUNCTION UPDATE, updates what was created in the previous function
 let data = JSON.parse(FooBar.getData());
+
 function update() {
-  handleBartenders(FooBarData.bartenders);
+  data = JSON.parse(FooBar.getData());
+  FooBarData = JSON.parse(FooBar.getData()); //take this string and turn it into json
+
+
   beers(FooBarData.beertypes);
   taps(FooBarData.taps);
+
 }
 
 //FUNCTION HANDLEBARTENDERS
-function handleBartenders(bartenders) {
-  //console.log(FooBarData.bartenders.name);
-  //console.log(bartenders[1]);
-  //find bartenders names
-  //display bartenders names
+
+console.log(FooBarData.bartenders)
+let names = FooBarData.bartenders;
+console.log(names)
+
+//find bartenders names
+
+//display bartenders names
+const templateBartenders = document.querySelector(".workers").content;
+
+function showBartenders(handleBartenders) {
+  names.forEach(function (worker) {
+    const clone2 = templateBartenders.cloneNode(true);
+    clone2.querySelector(".worker").textContent = worker.name;
+    document.querySelector('.boxworkers').appendChild(clone2);
+  })
 }
+
 
 // FUNCTION BEERS
 function beers(beers) {
-  //console.log(beers);
+  // console.log(beers);
   // find beer names, labels and alcohol%
   // calculate price from alcohol%
   // display labels, names and price
 }
 // FUNCTION TAPS
-function taps(taps) {
-  // console.log(taps[0]);
-  // find taps, level, beer in tap,
-  // find label for that beer
-  // display the beerlable on the keg/tap
-  // calculate the position of the image with the beer
-  // display the level of the beer in the keg
+const templateTaps = document.querySelector(".templateTap").content;
+
+function setupTaps(taps) {
+  // console.log(taps)
+
+  taps.forEach(function (tap) {
+    const clone = templateTaps.cloneNode(true);
+    // find taps, level, beer in tap
+    // display the level of the beer in the keg
+    let height = tap.level * 215.5 / tap.capacity;
+    let Ypos = 217 - height;
+    clone.querySelector("#Layer_2 rect.cls-1").setAttribute('height', height);
+    clone.querySelector("#Layer_2 rect.cls-1").setAttribute('y', Ypos);
+
+    //having name of the beer on the taps intstead of the pictures, but we don't use it at this point
+    // clone.querySelector(".bname").textContent = tap.beer;
+
+    // display the beer lable on the tap
+    data.beertypes.forEach(beer => {
+      if (tap.beer === beer.name) {
+        //show the right picture of the beer
+        clone.querySelector(".smallpicture").src = "images/" + beer.label;
+      }
+    })
+    console.log(data.beertypes)
+    document.querySelector('.bigboxtap').appendChild(clone);
+  })
 }
 
+
+function taps(taps) {
+  // console.log(taps)
+  const all = document.querySelectorAll("#Layer_2 rect.cls-1")
+
+  taps.forEach(function (tap, index) {
+    const height = tap.level * 215.5 / 2500;
+    let Ypos = 217 - height;
+    // console.log("ypos is : " + Ypos);
+    // console.log(height)
+    all[index].setAttribute('height', height);
+    all[index].setAttribute('y', Ypos);
+
+  })
+
+}
 // FUNCTION DISPLAYNUMBER
 function displayNumber() {
   // start animation "number comming out of machine"
