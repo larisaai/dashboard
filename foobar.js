@@ -39,6 +39,7 @@ beers();
 function beers() {
   //console.log(beers);
   // find beer names, labels and alcohol%
+  // display labels, names and price
   let beerTypes = data.beertypes;
   console.log(beerTypes);
 
@@ -59,15 +60,16 @@ function beers() {
 
     dest.appendChild(klon);
   });
+  // calculate price from alcohol%
 }
 
+// Modal Window - Marie D
+
+// Make Modal pop up and close
 const modal = document.querySelector("#modal_container");
 const closeButton = document.querySelector("#closebutton");
-const openButton = document.querySelectorAll("#beer-name");
 
-openButton.forEach(function(window) {
-  window.addEventListener("click", showModal);
-});
+document.querySelector(".columns").addEventListener("click", showModal);
 
 function showModal(window) {
   console.log("Show modal");
@@ -81,5 +83,41 @@ function hideModal() {
   modal.classList.add("hidden");
 }
 
-// calculate price from alcohol%
-// display labels, names and price
+// Make showModal show JSON data beertypes
+
+showInModal();
+
+function showInModal() {
+  let modalInfo = data.beertypes;
+  console.log(modalInfo);
+
+  let tempModal = document.querySelector("[data-temp]");
+  let destModal = document.querySelector("[data-destModal]");
+
+  destModal.innerHTML = "";
+
+  modalInfo.forEach(beer => {
+    let klon = tempModal.cloneNode(true).content;
+    klon
+      .querySelector("[data-beer-img2]")
+      .setAttribute("src", "images" + "/" + beer.label);
+    klon.querySelector("[data-name2]").textContent = beer.name;
+    klon.querySelector("[data-price2]").textContent = beer.alc * 10;
+    klon.querySelector("[data-alc]").textContent = beer.alc;
+    klon.querySelector("[data-description]").textContent = beer.description;
+
+    //klon.querySelector(".ret ").addEventListener("click ", openModal);
+
+    destModal.appendChild(klon);
+  });
+}
+
+// Make show a single beer
+
+function single(singleBeer) {
+  console.log(singleBeer);
+  for (let i = 0; i < data.length; i++) {
+    if (currentBeer.name == beertypes[i].name) {
+    }
+  }
+}

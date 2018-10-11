@@ -121,9 +121,18 @@ body {
 }
 
 #modal_window {
-  max-width: 80vw;
+  /*max-width: 80vw;*/
+  width: 40vw;
 }
-
+.modal_column {
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+#modal_img {
+  width: 100px;
+  height: 100px;
+}
 .hidden {
   visibility: hidden;
 }

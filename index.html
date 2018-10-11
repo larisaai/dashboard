@@ -83,20 +83,20 @@
     <section id="modal_container" class="hidden">
         <div id="modal_window">
             <span id="closebutton">X</span>
-            <h1>Details</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus adipisci amet, asperiores similique
-                illum dolore non voluptates nemo voluptatibus laboriosam fugiat quam reiciendis, facilis quidem modi
-                ullam odit ipsa minima.</p>
-            <p>Deserunt repudiandae quibusdam exercitationem voluptate sunt aut laboriosam labore deleniti fugit, nulla
-                rerum unde? Suscipit dicta quos, assumenda a provident repudiandae tenetur. Dolorem, architecto
-                nesciunt alias maxime molestias debitis illo!</p>
-            <p>Ab sequi neque inventore perspiciatis saepe voluptates architecto iste sit temporibus omnis ratione
-                aliquam id ex quibusdam distinctio consequatur fugit culpa minima voluptatum numquam explicabo, non
-                praesentium. Quas, adipisci sapiente?
-            </p>
-            <p>Excepturi aspernatur ullam perspiciatis veritatis ea, corrupti aliquam dolore quia sit natus officiis
-                odio fuga nesciunt reiciendis ab quam quos vel iure obcaecati mollitia eligendi, commodi alias. Earum,
-                nulla iure.</p>
+            <div class="screen-wrap">
+                <div data-destModal></div>
+                <template data-temp>
+                    <div class="modal_column">
+                        <img data-beer-img2 id="beer-img" src="">
+                        <p data-name2 id="beer-name"></p>
+                        <p data-price2 id="beer-price"></p>
+                        <p data-alc id="beer-price"></p>
+                    </div>
+                    <div class="modal_column">
+                        <p data-description id="beer-name"></p>
+                    </div>
+                </template>
+            </div>
         </div>
     </section>
 
