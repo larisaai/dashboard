@@ -35,7 +35,7 @@ function update() {
   taps(data.taps);
   // find where lastQueueId is in the queue at update
   indexNr = data.queue.map(e => e.id).indexOf(lastQueueId);
-  //  console.log(data);
+  console.log(data);
   //console.log("i am indexNr" + indexNr);
   // display new number in line  // loop
   if (indexNr < queueNr) {
@@ -47,6 +47,8 @@ function update() {
     let itIsYourTurn = document.querySelector("#getNumber #it_is_your_turn");
     itIsYourTurn.style.visibility = "visible";
     let numberText = document.querySelector("#getNumber #number_text");
+    let number = document.querySelector("#getNumber #your_number");
+    number.style.visibility = "hidden";
     numberText.style.visibility = "hidden";
   }
 }
@@ -213,12 +215,12 @@ let lastQueueIndex;
 // FUNCTION GETNUMBER // print your number on the screen and counts down every time a customer is served
 function getNumber() {
   // find first index of queue id
-  firstQueueId = data.queue[0].id;
+  // firstQueueId = data.queue[0].id;
 
   //find last index id
   lastQueueIndex = data.queue.length - 1;
-  //console.log("i am last queue id " + data.queue[lastQueueIndex].id);
   lastQueueId = data.queue[lastQueueIndex].id;
+  //console.log("i am last queue id " + data.queue[lastQueueIndex].id);
 
   //console.log("I am first Id " + firstQueueId);
 
