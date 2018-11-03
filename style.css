@@ -223,6 +223,9 @@ body {
 .beersContainer {
   width: 90vw;
 }
+article {
+  height: 500px;
+}
 
 .bigboxtap {
   margin-left: 15px;
